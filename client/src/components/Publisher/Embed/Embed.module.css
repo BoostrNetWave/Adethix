@@ -1,0 +1,7 @@
+.embedCodeContainer{
+    background-color: #e6e2e2;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}

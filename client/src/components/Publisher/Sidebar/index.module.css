@@ -1,0 +1,48 @@
+.container{
+    display:flex;
+    width: 100%;
+    display: relative;
+}
+
+.sidebar{
+    background-color: #fff;
+    border-right: 1px solid rgb(233, 229, 229);
+    color: #000;
+    padding-left: 10px;
+    height: 95vh;
+    width: 15%;
+    transition: all 0.5s;
+    position: fixed;
+    top: 5vh;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: #2C82B9;
+    margin-bottom: 10px;
+}
+
+.icon{
+    color: rgb(57, 50, 50);
+    margin-right: 5px;
+}
+
+.topSection{
+    display: flex;
+    align-items:center;
+    padding:20px 15px;
+}
+
+.main{
+    position: relative;
+    top: 5vh;
+    left: 15%;
+    padding: 20px;
+    width: 85%;
+    min-height: 95vh;
+    background-color: #FAFAFB;
+}
+
+.link{
+    display: flex;
+}

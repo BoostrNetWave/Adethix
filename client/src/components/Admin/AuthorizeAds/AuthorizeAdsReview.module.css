@@ -1,0 +1,109 @@
+.adContainer {
+  display: block; /*done*/
+  overflow: hidden; /*done*/
+  padding-left: 130px; /*done*/
+  border: 1px solid #e1e1e7; /*done*/
+  background-color: #f1f1f3; /*done*/
+  border-radius: 12px; /*done*/
+  padding: 12px 12px 12px calc(142px); /*done*/
+}
+
+.adContainer .ad-text {
+  font-size: 0.875rem; /*done*/
+  line-height: 1.5; /*done*/
+  letter-spacing: 0px; /*done*/
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol"; /*done*/
+  font-weight: 400; /*done*/
+  display: block; /*done*/
+  margin-left: 12px; /*done*/
+}
+
+.adContainer a,
+.adContainer a:hover {
+  cursor: pointer; /*done*/
+  color: rgb(0, 0, 0); /*done*/
+  text-decoration: none; /*done*/
+}
+
+.adContainer .boostr-netwave-poweredby {
+  display: block; /*done*/
+  font-size: 0.75rem; /*done*/
+  line-height: 1.5; /*done*/
+  letter-spacing: 0px; /*done*/
+  font-weight: 400; /*done*/
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol"; /*done*/
+  margin-left: 12px; /*done*/
+  color: rgb(182, 190, 201); /*done*/
+  margin-top: 4px; /*done*/
+}
+
+.adContainer .ad-img {
+  float: left; /*done*/
+  margin-left: -130px; /*done*/
+  width: 130px; /*done*/
+  height: 100px; /*done*/
+}
+
+.adContainer img {
+  vertical-align: middle; /*done*/
+}
+
+@media (min-width: 600px) {
+  #boostr-netwave-ads {
+    /* padding: 12px 12px 12px calc(142px); */
+  }
+  .adContainer .ad-text {
+    font-size: 1rem; /*done*/
+    line-height: 1.5; /*done*/
+    letter-spacing: 0px; /*done*/
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol"; /*done*/
+    font-weight: 400; /*done*/
+  }
+}
+
+/* extra design for sidebar, fixed, and custom small screen upto 324px */
+
+@media (max-width: 325px) {
+  .adContainer {
+    text-align: center;
+    padding: 12px 5px;
+  }
+  .adContainer .ad-img {
+    float: none;
+    margin-left: 0px;
+  }
+  .adContainer .ad-text {
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+}
+
+/* fixed ad */
+.adContainer {
+  text-align: center;
+  max-width: 220px;
+  padding: 12px 15px;
+}
+
+.fixedAd {
+  /* position: fixed; */
+  right: 30px;
+  bottom: 25px;
+}
+
+.adImg {
+  float: none;
+  margin-left: 0px;
+}
+
+.adText {
+  margin-left: 0px;
+  margin-top: 5px;
+  padding: 0px 18px;
+}

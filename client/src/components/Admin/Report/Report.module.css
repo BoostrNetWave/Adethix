@@ -1,0 +1,96 @@
+.reportTitle{
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.dataPicker{
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    /* margin-bottom: 20px; */
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.buttonContainer{
+    display: inline;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.datePickerContainer{
+    background-color: white;
+    border: 1px solid #dee2e6;
+    display: inline-flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.submitButton{
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #dee2e6;
+}
+
+.submitButton:hover{
+    background-color: #fff;
+}
+
+.date{
+    appearance: none; /* Removes default styling */
+    -webkit-appearance: none; /* Removes default styling for Safari */
+    -moz-appearance: textfield; /* Removes default styling for Firefox */
+    
+    width: 100%;
+    padding: 10px 20px 10px 10px; /* Adjust padding for icon space */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    box-sizing: border-box;
+    position: relative; /* Ensure relative positioning */
+}
+
+
+.date::-webkit-calendar-picker-indicator {
+    background-size: 20px 20px;
+    color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.date:hover{
+    border-color: #888;
+    background-color: #fff;
+}
+
+.date:focus {
+    border-color: #555;
+    outline: none;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
+}
+
+.date::placeholder {
+    color: #aaa;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .date {
+        width: 100%;
+        font-size: 14px;
+    }
+}

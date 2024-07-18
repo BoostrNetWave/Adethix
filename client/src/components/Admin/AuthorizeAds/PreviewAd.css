@@ -1,0 +1,173 @@
+#boostr-netwave-ads {
+  display: block; /*done*/
+  overflow: hidden; /*done*/
+  padding-left: 130px; /*done*/
+  border: 1px solid #e1e1e7; /*done*/
+  background-color: #f1f1f3; /*done*/
+  border-radius: 12px; /*done*/
+  padding: 12px 12px 12px calc(142px); /*done*/
+}
+
+#boostr-netwave-ads .ad-text {
+  font-size: 0.875rem; /*done*/
+  line-height: 1.5; /*done*/
+  letter-spacing: 0px; /*done*/
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol"; /*done*/
+  font-weight: 400; /*done*/
+  display: block; /*done*/
+  margin-left: 12px; /*done*/
+}
+
+#boostr-netwave-ads a,
+#boostr-netwave-ads a:hover {
+  cursor: pointer; /*done*/
+  color: rgb(0, 0, 0); /*done*/
+  text-decoration: none; /*done*/
+}
+
+#boostr-netwave-ads .boostr-netwave-poweredby {
+  display: block; /*done*/
+  font-size: 0.75rem; /*done*/
+  line-height: 1.5; /*done*/
+  letter-spacing: 0px; /*done*/
+  font-weight: 400; /*done*/
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol"; /*done*/
+  margin-left: 12px; /*done*/
+  color: rgb(182, 190, 201); /*done*/
+  margin-top: 4px; /*done*/
+}
+
+#boostr-netwave-ads .ad-img {
+  float: left; /*done*/
+  margin-left: -130px; /*done*/
+  width: 130px; /*done*/
+  height: 100px; /*done*/
+}
+
+#boostr-netwave-ads img {
+  vertical-align: middle; /*done*/
+}
+
+@media (min-width: 600px) {
+  #boostr-netwave-ads {
+    /* padding: 12px 12px 12px calc(142px); */
+  }
+  #boostr-netwave-ads .ad-text {
+    font-size: 1rem; /*done*/
+    line-height: 1.5; /*done*/
+    letter-spacing: 0px; /*done*/
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol"; /*done*/
+    font-weight: 400; /*done*/
+  }
+}
+
+/* extra design for sidebar, fixed, and custom small screen upto 324px */
+
+@media (max-width: 325px) {
+  #boostr-netwave-ads {
+    text-align: center;
+    padding: 12px 5px;
+  }
+  #boostr-netwave-ads .ad-img {
+    float: none;
+    margin-left: 0px;
+  }
+  #boostr-netwave-ads .ad-text {
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+}
+
+/* text only ad */
+#textOnly .ad-img {
+  float: none;
+  margin-left: 0px;
+}
+
+#textOnly #boostr-netwave-ads {
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 0px;
+  border: 1px solid #e1e1e7;
+  background-color: #f1f1f3;
+  border-radius: 12px;
+  padding: 12px 12px 12px 12px;
+}
+
+#textOnly {
+  /* position: fixed; */
+  bottom: 0;
+  /* width: 100vw; */
+  right: 10px;
+  bottom: 10px;
+  margin-left: 10px;
+}
+
+/* fixed ad */
+.fixed-ad #boostr-netwave-ads {
+  text-align: center;
+  max-width: 220px;
+  padding: 12px 15px;
+}
+
+.fixed-ad {
+  position: fixed;
+  right: 30px;
+  bottom: 25px;
+}
+
+.fixed-ad #boostr-netwave-ads .ad-img {
+  float: none;
+  margin-left: 0px;
+}
+
+.fixed-ad #boostr-netwave-ads .ad-text {
+  margin-left: 0px;
+  margin-top: 5px;
+  padding: 0px 18px;
+}
+
+/* sidebar ad */
+.sidebar-ad #boostr-netwave-ads {
+  text-align: center;
+  max-width: 300px;
+  padding: 12px 10px;
+}
+
+.sidebar-ad #boostr-netwave-ads .ad-img {
+  float: none;
+  margin-left: 0px;
+}
+
+.sidebar-ad #boostr-netwave-ads .ad-text {
+  margin-left: 0px;
+  margin-top: 5px;
+}
+
+/* custom ad medium */
+.custom-ad-medium #boostr-netwave-ads {
+  max-width: 600px;
+}
+
+/* custom ad small */
+.custom-ad-small #boostr-netwave-ads {
+  text-align: center;
+  max-width: 280px;
+  padding: 12px 10px;
+}
+
+.custom-ad-small #boostr-netwave-ads .ad-img {
+  float: none;
+  margin-left: 0px;
+}
+
+.custom-ad-small #boostr-netwave-ads .ad-text {
+  margin-left: 0px;
+  margin-top: 5px;
+}
