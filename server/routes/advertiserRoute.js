@@ -5,6 +5,7 @@ const Advertiser = require("../models/advertiser");
 const jwt = require("jsonwebtoken");
 
 const upload = require("../multerconfig");
+const uploadVideo = require("../multervideoconfig")
 
 // Middleware to verify JWT
 const verifyToken = async (req, res, next) => {
@@ -53,6 +54,7 @@ router.post("/campaign/:campaignId/add-money/verifysuccess", verifyToken, advert
 router.post("/campaign/:campaignId/add-money/verifyfailure", verifyToken, advertiserController.verifyfailure);
 
 router.post("/campaign/:campaignId/create", verifyToken, upload.single('image'), advertiserController.createAd);
+router.post("/campaign/:campaignId/createvideoad", verifyToken, uploadVideo.single('video'), advertiserController.createvideoad);
 router.get("/campaign/:campaignId/:adId", verifyToken, advertiserController.getAdDetails);
 router.get("/campaign/:campaignId/:adId/report", verifyToken, advertiserController.getAdReport);
 router.get("/campaign/:campaignId/:adId/report/range", verifyToken, advertiserController.getAdReportRangeDate);

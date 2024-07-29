@@ -9,7 +9,6 @@ const adSchema = new Schema({
     },
     content: {
         type: String,
-        required: true
     },
     linkUrl: {
         type: String,
@@ -17,11 +16,21 @@ const adSchema = new Schema({
     },
     image: {
         url: {
-            type: String, 
+            type: String,
             default: null
         },
         filename: {
-            type: String, 
+            type: String,
+            default: null
+        }
+    },
+    video: {
+        url: {
+            type: String,
+            default: null
+        },
+        filename: {
+            type: String,
             default: null
         }
     },

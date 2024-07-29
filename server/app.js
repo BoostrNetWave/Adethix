@@ -49,6 +49,7 @@ app.get("/change", async (req, res) => {
 })
 
 app.use("/image/upload", express.static(path.join(__dirname, './uploads')));
+app.use("/video/upload", express.static(path.join(__dirname, './uploads')));
 
 // app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoute);

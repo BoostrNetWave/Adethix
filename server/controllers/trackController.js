@@ -163,6 +163,51 @@ module.exports.getAdFunction = async (req, res) => {
                         // call a function to generate inhouse ad
                         findInHouseAd();
                     }
+                } else if (adType === "video") {
+                    ads = await Ad.aggregate([
+                        {
+                            $lookup: {
+                                from: 'campaigns',
+                                localField: 'campaign',
+                                foreignField: '_id',
+                                as: 'campaignDetails'
+                            }
+                        },
+                        {
+                            $unwind: '$campaignDetails'
+                        },
+                        {
+                            $match: {
+                                $and: [
+                                    {
+                                        $expr: {
+                                            $gt: ["$campaignDetails.balanceAmount", { $add: ["$viewAdvertiserCost", "$clickAdvertiserCost"] }]
+                                        }
+                                    },
+                                    {
+                                        isApproved: true
+                                    },
+                                    {
+                                        isRejected: false
+                                    },
+                                    {
+                                        isActive: true
+                                    },
+                                    {
+                                        inHouseAd: false
+                                    },
+                                    {
+                                        "image.url": null
+                                    },
+                                ]
+                            }
+                        }
+                    ])
+
+                    // if (ads.length === 0) {
+                    //     // call a function to generate inhouse ad
+                    //     findInHouseAd();
+                    // }
                 } else {
                     // console.log("fixed")
                     ads = await Ad.aggregate([

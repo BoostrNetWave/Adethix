@@ -1100,6 +1100,36 @@ module.exports.createAd = async (req, res) => {
     }
 }
 
+module.exports.createvideoad = async (req, res) => {
+    try {
+        const { campaignId } = req.params;
+
+        if (req.body.name === "" || req.body.linkUrl === "") {
+            return res.status(400).send({ message: "Please fill all the fields." });
+        } else if (!req.file) {
+            return res.status(400).send({ message: "Please select a video." });
+        }
+
+        let newAd = new Ad({
+            ...req.body,
+            creator: req.advertiser._id,
+            campaign: campaignId,
+            video: {
+                filename: req?.file?.filename,
+                url: req?.file?.path ? `${process.env.BACKEND_URL}/video/upload/${req.file.filename}` : ''
+            },
+            options: { image: false, textOnly: false, sidebar: false, custom: false },
+        });
+
+        let createdAd = await newAd.save();
+        // console.log(createdAd)
+        res.status(201).send({ message: "New ad created succesfully" });
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({ message: "Internal server error" });
+    }
+}
+
 
 module.exports.getAdDetails = async (req, res) => {
     try {
