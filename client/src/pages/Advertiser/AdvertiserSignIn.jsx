@@ -31,7 +31,7 @@ function Copyright(props) {
         to={import.meta.env.VITE_HOME_PAGE}
         sx={{ textDecoration: "none" }}
       >
-        Boostr Netwave Advertise Platform
+        Adethix
       </Link>{" "}
       {new Date().getFullYear()}
     </Typography>

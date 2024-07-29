@@ -38,6 +38,9 @@ const AdvertiserCampaign = lazy(() =>
 const AdvertiserCreateAdvertisement = lazy(() =>
   import("../pages/Advertiser/AdvertiserCreateAdvertisement.jsx")
 );
+const AdvertiserCreateVideoAD = lazy(() => 
+  import("../pages/Advertiser/AdvertiserCreateVideoAD.jsx")
+)
 const AdvertiserAdvertisement = lazy(() =>
   import("../pages/Advertiser/AdvertiserAdvertisement.jsx")
 );
@@ -106,6 +109,10 @@ const AdvertiserRoutes = {
     {
       path: "campaings/:campaignId/create",
       element: <AdvertiserCreateAdvertisement />,
+    },
+    {
+      path: "campaings/:campaignId/createvideoad",
+      element: <AdvertiserCreateVideoAD />,
     },
     {
       path: "campaings/:campaignId/report",

@@ -19,7 +19,7 @@ const theme = createTheme({
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
-    <ToastContainer position="bottom-right"/>
+    {/* <ToastContainer position="bottom-right"/> */}
     <App />
   </ThemeProvider>,
 );

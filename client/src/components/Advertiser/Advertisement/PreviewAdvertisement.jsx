@@ -46,6 +46,45 @@ function PreviewAdvertisement({ ad }) {
       </Box>
 
       <Box className="custom-ads">
+        {!ad?.options?.textOnly &&
+          !ad?.options?.custom &&
+          !ad?.options?.image &&
+          !ad?.options?.sidebar && (
+            <Box mt={2} id="video">
+              <Typography mb={1}>Video ad</Typography>
+              <div id="adethix-video-ad">
+                <span className="outerSpan">
+                  <span className="ad-wrap">
+                    {/* <video ></video> */}
+                    <video width={400} controls>
+                      <source src={ad?.video?.url} type="video/mp4" />
+                    </video>
+                  </span>
+                  <span className="innerSpan2">
+                    <button>
+                      <a
+                        href={ad?.linkUrl}
+                        className="adethix-poweredby"
+                        target="_blank"
+                        rel="sponsored"
+                      >
+                        Show more
+                      </a>
+                    </button>
+                    <a
+                      href={import.meta.env.VITE_SPONSOR}
+                      className="adethix-poweredby"
+                      target="_blank"
+                      rel="sponsored"
+                    >
+                      ads via Adethix
+                    </a>
+                  </span>
+                </span>
+              </div>
+            </Box>
+          )}
+
         {ad?.options?.textOnly && (
           <Box mt={2} id="textOnly">
             <Typography mb={1}>Text only ad</Typography>
@@ -67,7 +106,7 @@ function PreviewAdvertisement({ ad }) {
                   target="_blank"
                   rel="sponsored"
                 >
-                  ads via Boostr Netwave
+                  ads via Adethix
                 </a>
               </span>
             </div>
@@ -111,7 +150,7 @@ function PreviewAdvertisement({ ad }) {
                   target="_blank"
                   rel="sponsored"
                 >
-                  ads via Boostr Netwave
+                  ads via Adethix
                 </a>
               </span>
             </div>
@@ -155,14 +194,14 @@ function PreviewAdvertisement({ ad }) {
                   target="_blank"
                   rel="sponsored"
                 >
-                  ads via Boostr Netwave
+                  ads via Adethix
                 </a>
               </span>
             </div>
           </Box>
         )}
 
-        {ad?.options?.image && (
+        {ad?.options?.custom && (
           <>
             <Box mb={2} className="custom-ad-small">
               <Typography mb={1}>Custom Ad for small screen</Typography>
@@ -199,7 +238,7 @@ function PreviewAdvertisement({ ad }) {
                     target="_blank"
                     rel="sponsored"
                   >
-                    ads via Boostr Netwave
+                    ads via Adethix
                   </a>
                 </span>
               </div>
@@ -240,7 +279,7 @@ function PreviewAdvertisement({ ad }) {
                     target="_blank"
                     rel="sponsored"
                   >
-                    ads via Boostr Netwave
+                    ads via Adethix
                   </a>
                 </span>
               </div>
@@ -281,7 +320,7 @@ function PreviewAdvertisement({ ad }) {
                     target="_blank"
                     rel="sponsored"
                   >
-                    ads via Boostr Netwave
+                    ads via Adethix
                   </a>
                 </span>
               </div>

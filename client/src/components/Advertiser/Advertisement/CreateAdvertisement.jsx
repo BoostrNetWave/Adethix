@@ -122,9 +122,6 @@ function CreateAdvertisement() {
         );
         // console.log(response);
         if (response?.status === 201) {
-          const data = response.data;
-          console.log(data);
-          // console.log(data.campaignId);
           toast.success(response.data.message);
           navigate(`/advertiser/campaings/${campaignId}`);
         } else {

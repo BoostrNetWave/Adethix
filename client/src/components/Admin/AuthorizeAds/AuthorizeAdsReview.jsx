@@ -19,7 +19,10 @@ import { toast } from "react-toastify";
 // import styles from "./AuthorizeAdsReview.module.css"
 
 function AuthorizeAdsReview({ data }) {
-  useDocumentTitle(data ? `Review: ${data.adInfo.content}` : "Authorize Ad");
+  useDocumentTitle(
+    data.adInfo.content ? `Review: ${data.adInfo.content}` : "Review Ad"
+  );
+
   // console.log(data);
   const { reviewId } = useParams();
 
@@ -196,7 +199,7 @@ function AuthorizeAdsReview({ data }) {
               </Link>
             </Typography>
 
-            <Box
+            {/* <Box
               variant="h6"
               sx={{ display: "flex", alignItems: "center", mb: 1 }}
             >
@@ -229,7 +232,46 @@ function AuthorizeAdsReview({ data }) {
                   <ListItemText primary="Custom" />
                 </ListItem>
               )}
-            </List>
+            </List> */}
+            {(data.adInfo?.options?.image ||
+        data.adInfo?.options?.textOnly ||
+        data.adInfo?.options?.sidebar ||
+        data.adInfo?.options?.custom) && (
+        <>
+          <Box variant="h6" sx={{ display: "flex", alignItems: "center" }}>
+            <Typography variant="h6" sx={{ pr: 1 }}>
+              Content:
+            </Typography>
+            <Typography variant="h6">{data.adInfo?.content}</Typography>
+          </Box>
+
+          <Typography variant="h6" sx={{ pr: 1}}>
+            Ad Types:
+          </Typography>
+          <List sx={{mb: -2}}>
+            {data.adInfo?.options?.image && (
+              <ListItem sx={{ mt: -2 }}>
+                <ListItemText primary="Image + Text" />
+              </ListItem>
+            )}
+            {data.adInfo?.options?.textOnly && (
+              <ListItem sx={{ mt: -2 }}>
+                <ListItemText primary="Text Only" />
+              </ListItem>
+            )}
+            {data.adInfo?.options?.sidebar && (
+              <ListItem sx={{ mt: -2 }}>
+                <ListItemText primary="Sidebar" />
+              </ListItem>
+            )}
+            {data.adInfo?.options?.custom && (
+              <ListItem sx={{ mt: -2 }}>
+                <ListItemText primary="Custom" />
+              </ListItem>
+            )}
+          </List>
+        </>
+      )}
           </Box>
 
           <Box component="form" onSubmit={handleSubmit}>

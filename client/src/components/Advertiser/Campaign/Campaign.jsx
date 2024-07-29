@@ -11,7 +11,7 @@ import styles from "./Campaign.module.css";
 import Analytic from "./Analytic";
 
 function Campaign({ campaign, ads, adInfo, campaignInfo }) {
-  useDocumentTitle(campaign?.name ? campaign.name : "Advertisement Platform");
+  useDocumentTitle(campaign?.name ? campaign.name : "Adethix");
   // console.log(campaign);
   // console.log(ads);
   // console.log(adInfo);
@@ -96,7 +96,7 @@ function Campaign({ campaign, ads, adInfo, campaignInfo }) {
       {/* Show in table */}
       {ads && ads.length > 0 ? (
         <Box>
-          <Box sx={{display: "flex", gap: 2}}>
+          <Box sx={{ display: "flex", gap: 2 }}>
             <Link component={RouterLink} relative="path" to="report">
               <Button
                 variant="outlined"
@@ -122,17 +122,26 @@ function Campaign({ campaign, ads, adInfo, campaignInfo }) {
               Advertisements
             </Typography>
 
-            {/* <Box sx={{ textAlign: "right" }}> */}
-            <Link component={RouterLink} to={"create"}>
-              <Button
-                variant="outlined"
-                sx={{ textTransform: "none" }}
-                startIcon={<AddIcon />}
-              >
-                Create advertisement
-              </Button>
-            </Link>
-            {/* </Box> */}
+            <Box >
+              <Link component={RouterLink} to={"createvideoad"} sx={{mr: 1}}>
+                <Button
+                  variant="outlined"
+                  sx={{ textTransform: "none" }}
+                  startIcon={<AddIcon />}
+                >
+                  Create Video AD
+                </Button>
+              </Link>
+              <Link component={RouterLink} to={"create"}>
+                <Button
+                  variant="outlined"
+                  sx={{ textTransform: "none" }}
+                  startIcon={<AddIcon />}
+                >
+                  Create advertisement
+                </Button>
+              </Link>
+            </Box>
           </Box>
           <Grid item xs={12} md={7} mt={0} lg={8}>
             <MainCard sx={{ mt: 2 }} content={false}>

@@ -20,9 +20,9 @@ function Embed({ data }) {
       await navigator.clipboard.writeText(
         `<script async src="${
           import.meta.env.VITE_JS_FILE
-        }"></script>\n<div id="boostr-netwave-ads" data-bn-publisher="${
+        }"></script>\n<div id="adethix" data-bn-publisher="${
           data._id
-        }" data-bn-com="boostr"></div>`
+        }" data-bn-com="adethix"></div>`
       );
     }
   };
@@ -54,9 +54,9 @@ function Embed({ data }) {
               </pre>
               <pre>
                 <code>
-                  &lt;div id=&quot;boostr-netwave-ads&quot;
+                  &lt;div id=&quot;adethix&quot;
                   data-bn-publisher=&quot;{data._id}&quot;
-                  data-bn-com=&quot;boostr&quot;&gt;&lt;/div&gt;
+                  data-bn-com=&quot;adethix&quot;&gt;&lt;/div&gt;
                 </code>
               </pre>
             </Box>

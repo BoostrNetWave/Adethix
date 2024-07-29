@@ -11,9 +11,10 @@ import Typography from "@mui/material/Typography";
 import FacebookIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/X";
+import siteLogo from "../../assets/logo.png";
 
 const logoStyle = {
-  width: "200px",
+  width: "150px",
   height: "auto",
 };
 
@@ -22,7 +23,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" mt={1}>
       {"Copyright © "}
       <Link component={RouterLink} to={import.meta.env.VITE_HOME_PAGE}>
-        Boostr Netwave Ads&nbsp;
+        Adethix&nbsp;
       </Link>
       {new Date().getFullYear()}
     </Typography>
@@ -71,14 +72,8 @@ export default function Footer() {
           <Box sx={{ width: { xs: "300px", sm: "300px" } }}>
             {/* brand logo */}
             <Box sx={{ ml: "-15px" }}>
-              <img
-                src={
-                  // "https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg"
-                  "https://logosvg.com/wp-content/uploads/2016/08/logosvgcom.png"
-                }
-                style={logoStyle}
-                alt="logo of sitemark"
-              />
+              
+              <img src={siteLogo} alt="adethix" style={logoStyle}/>
             </Box>
 
             {/* brand links */}

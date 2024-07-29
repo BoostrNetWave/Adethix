@@ -26,12 +26,14 @@ function AuthorizeAdsHomeCard({ ad }) {
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        {/* while text only ad show no image */}
         <Box sx={{ height: 100, width: 130 }}>
           <img
-            src={ad.adInfo.image?.url ? ad.adInfo.image?.url : "text ad"}
+            src={ad.adInfo.image.url}
             alt=""
-            style={{ height: "100px", width: "130px", maxWidth: "130px" }}
+            border="0"
+            height="100"
+            width="130"
+            style={{ maxWidth: "130px" }}
           />
         </Box>
         <CardContent
@@ -53,15 +55,19 @@ function AuthorizeAdsHomeCard({ ad }) {
               {ad.adInfo.linkUrl}
             </Link>
           </Typography>
-
-          <Box variant="h6" sx={{ display: "flex", alignItems: "center" }}>
-            <Typography variant="h6" sx={{ fontSize: "17px", pr: 1 }}>
-              Content:
-            </Typography>
-            <Typography variant="subtitle1" sx={{ fontSize: "16px" }}>
-              {ad.adInfo.content}
-            </Typography>
-          </Box>
+          {(ad?.adInfo?.options?.image ||
+            ad?.adInfo?.options?.textOnly ||
+            ad?.adInfo?.options?.sidebar ||
+            ad?.adInfo?.options?.custom) && (
+            <Box variant="h6" sx={{ display: "flex", alignItems: "center" }}>
+              <Typography variant="h6" sx={{ fontSize: "17px", pr: 1 }}>
+                Content:
+              </Typography>
+              <Typography variant="subtitle1" sx={{ fontSize: "16px" }}>
+                {ad.adInfo.content}
+              </Typography>
+            </Box>
+          )}
         </CardContent>
       </Box>
       <CardActions>

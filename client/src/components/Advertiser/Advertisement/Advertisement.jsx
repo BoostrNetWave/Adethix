@@ -5,7 +5,6 @@ import {
   Link,
   Box,
   Grid,
-  Tooltip,
   ListItemText,
   List,
   ListItem,
@@ -263,38 +262,45 @@ function Advertisement({ ad, adInfo }) {
         </Link>
       </Typography>
 
-      <Box variant="h6" sx={{ display: "flex", alignItems: "center" }}>
-        <Typography variant="h6" sx={{ pr: 1 }}>
-          Content:
-        </Typography>
-        <Typography variant="h6">{updatedAd?.content}</Typography>
-      </Box>
+      {(updatedAd?.options?.image ||
+        updatedAd?.options?.textOnly ||
+        updatedAd?.options?.sidebar ||
+        updatedAd?.options?.custom) && (
+        <>
+          <Box variant="h6" sx={{ display: "flex", alignItems: "center" }}>
+            <Typography variant="h6" sx={{ pr: 1 }}>
+              Content:
+            </Typography>
+            <Typography variant="h6">{updatedAd?.content}</Typography>
+          </Box>
 
-      <Typography variant="h6" sx={{ pr: 1 }}>
-        Ad Types:
-      </Typography>
-      <List>
-        {updatedAd?.options?.image && (
-          <ListItem sx={{ mt: -2 }}>
-            <ListItemText primary="Image + Text" />
-          </ListItem>
-        )}
-        {updatedAd?.options?.textOnly && (
-          <ListItem sx={{ mt: -2 }}>
-            <ListItemText primary="Text Only" />
-          </ListItem>
-        )}
-        {updatedAd?.options?.sidebar && (
-          <ListItem sx={{ mt: -2 }}>
-            <ListItemText primary="Sidebar" />
-          </ListItem>
-        )}
-        {updatedAd?.options?.custom && (
-          <ListItem sx={{ mt: -2 }}>
-            <ListItemText primary="Custom" />
-          </ListItem>
-        )}
-      </List>
+          <Typography variant="h6" sx={{ pr: 1}}>
+            Ad Types:
+          </Typography>
+          <List sx={{mb: -2}}>
+            {updatedAd?.options?.image && (
+              <ListItem sx={{ mt: -2 }}>
+                <ListItemText primary="Image + Text" />
+              </ListItem>
+            )}
+            {updatedAd?.options?.textOnly && (
+              <ListItem sx={{ mt: -2 }}>
+                <ListItemText primary="Text Only" />
+              </ListItem>
+            )}
+            {updatedAd?.options?.sidebar && (
+              <ListItem sx={{ mt: -2 }}>
+                <ListItemText primary="Sidebar" />
+              </ListItem>
+            )}
+            {updatedAd?.options?.custom && (
+              <ListItem sx={{ mt: -2 }}>
+                <ListItemText primary="Custom" />
+              </ListItem>
+            )}
+          </List>
+        </>
+      )}
 
       {updatedAd?.isApproved &&
         updatedAd?.isActive &&
@@ -302,7 +308,7 @@ function Advertisement({ ad, adInfo }) {
           <>
             <Box
               variant="h6"
-              sx={{ display: "flex", alignItems: "center", mt: -2 }}
+              sx={{ display: "flex", alignItems: "center", }}
             >
               <Typography variant="h6" sx={{ pr: 1 }}>
                 Currrent CPM:

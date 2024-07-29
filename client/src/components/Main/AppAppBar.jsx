@@ -13,6 +13,7 @@ import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import ToggleColorMode from "./ToggleColorMode";
 import { Link as RouterLink } from "react-router-dom";
+import siteLogo from "../../assets/logo.png";
 
 const logoStyle = {
   width: "140px",
@@ -84,14 +85,8 @@ function AppAppBar({ mode, toggleColorMode }) {
                 px: 0,
               }}
             >
-              <img
-                src={
-                  // 'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
-                  "https://logosvg.com/wp-content/uploads/2016/08/logosvgcom.png"
-                }
-                style={logoStyle}
-                alt="logo of sitemark"
-              />
+              
+              <img src={siteLogo} alt="adethix" style={logoStyle}/>
               {/* <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <MenuItem
                   onClick={() => scrollToSection("features")}
