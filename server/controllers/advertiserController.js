@@ -1089,7 +1089,8 @@ module.exports.createAd = async (req, res) => {
             image: {
                 filename: req?.file?.filename,
                 url: req?.file?.path ? `${process.env.BACKEND_URL}/image/upload/${req.file.filename}` : ''
-            }
+            },
+            isVideoAD: false
         });
         let createdAd = await newAd.save();
         // console.log(createdAd)
@@ -1119,6 +1120,7 @@ module.exports.createvideoad = async (req, res) => {
                 url: req?.file?.path ? `${process.env.BACKEND_URL}/video/upload/${req.file.filename}` : ''
             },
             options: { image: false, textOnly: false, sidebar: false, custom: false },
+            isVideoAD: true,
         });
 
         let createdAd = await newAd.save();

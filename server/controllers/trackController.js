@@ -60,6 +60,9 @@ module.exports.getAdFunction = async (req, res) => {
                                     },
                                     {
                                         "options.textOnly": { $exists: true }
+                                    },
+                                    {
+                                        isVideoAD: false
                                     }
                                 ]
                             }
@@ -106,6 +109,9 @@ module.exports.getAdFunction = async (req, res) => {
                                     },
                                     {
                                         "options.sidebar": { $exists: true }
+                                    },
+                                    {
+                                        isVideoAD: false
                                     }
                                 ]
                             }
@@ -153,6 +159,9 @@ module.exports.getAdFunction = async (req, res) => {
                                     },
                                     {
                                         "options.custom": { $exists: true }
+                                    },
+                                    {
+                                        isVideoAD: false
                                     }
                                 ]
                             }
@@ -199,6 +208,9 @@ module.exports.getAdFunction = async (req, res) => {
                                     {
                                         "image.url": null
                                     },
+                                    {
+                                        isVideoAD: true
+                                    }
                                 ]
                             }
                         }
@@ -244,6 +256,9 @@ module.exports.getAdFunction = async (req, res) => {
                                     },
                                     {
                                         "options.image": { $exists: true }
+                                    },
+                                    {
+                                        isVideoAD: false
                                     }
                                 ]
                             }

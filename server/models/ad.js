@@ -34,6 +34,10 @@ const adSchema = new Schema({
             default: null
         }
     },
+    isVideoAD: {
+        type: Boolean,
+        required: true
+    },
     options: {
         image: {
             type: Boolean,
