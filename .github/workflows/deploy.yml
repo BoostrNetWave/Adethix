@@ -30,16 +30,16 @@ jobs:
           echo "Deploying to $HOST"
           ssh $USER@$HOST << EOF
             # Install necessary packages
-            sudo apt-get update
-            sudo apt-get install -y nginx nodejs npm
+            # sudo apt-get update
+            # sudo apt-get install -y nginx nodejs npm
 
             # Install PM2
-            sudo npm install -g pm2
+            # sudo npm install -g pm2
 
             # Set up firewall
-            sudo ufw allow OpenSSH
-            sudo ufw allow 'Nginx Full'
-            sudo ufw enable
+            # sudo ufw allow OpenSSH
+            # sudo ufw allow 'Nginx Full'
+            # sudo ufw enable
 
             # Set up project directories
             # mkdir -p /var/www/mern-backend
@@ -50,6 +50,7 @@ jobs:
             git clone https://github.com/BoostrNetWave/Adethix.git .
 
             # Install dependencies and build
+            cd /var/www/server/
             npm install
             npm run build
 
