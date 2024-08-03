@@ -52,12 +52,13 @@ jobs:
             # Install dependencies and build
             cd /var/www/server/
             npm install
-            npm run build
+            # npm run build
 
             # Start backend with PM2
             pm2 restart all || pm2 start index.mjs --name backend
 
             # Set up Nginx for frontend
-            sudo cp -r build/* /var/www/html/
+            # sudo cp -r build/* /var/www/html/
+            sudo cp -r Adethix/server/dist/* /var/www/html/
             sudo systemctl restart nginx
           EOF
