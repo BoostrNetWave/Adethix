@@ -55,7 +55,7 @@ jobs:
             # npm run build
 
             # Start backend with PM2
-            pm2 restart all || pm2 start index.mjs --name backend
+            pm2 restart all || pm2 start app.js --name backend
 
             # Set up Nginx for frontend
             # sudo cp -r build/* /var/www/html/

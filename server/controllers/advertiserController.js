@@ -1270,7 +1270,9 @@ module.exports.signin = async (req, res) => {
 const validateSigninData = (data) => {
     const schema = joi.object({
         email: joi.string().email().required().label("email"),
-        password: passwordComplexity().required().label("password"),
+        password: joi.string()
+            .allow('')
+            .label('password'),
     });
     return schema.validate(data);
 }
