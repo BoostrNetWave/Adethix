@@ -18,7 +18,6 @@ import Testimonials from "../../components/Main/Testimonials"; //
 import FAQ from "../../components/Main/FAQ"; //
 import Footer from "../../components/Main/Footer";
 import getLPTheme from "./getLPTheme";
-import useDocumentTitle from "../../useDocumentTitle";
 
 // function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
 //   return (
@@ -62,8 +61,7 @@ import useDocumentTitle from "../../useDocumentTitle";
 //   toggleCustomTheme: PropTypes.func.isRequired,
 // };
 
-export default function Home() {
-  useDocumentTitle("Adethix");
+export default function ContactUs() {
   const [mode, setMode] = React.useState("light");
   // const [showCustomTheme, setShowCustomTheme] = React.useState(true);
   const LPtheme = createTheme(getLPTheme(mode));

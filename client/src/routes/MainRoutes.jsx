@@ -1,6 +1,9 @@
 // ==============================|| MAIN ROUTING ||============================== //
 import Home from "../pages/Main/Home.jsx";
+import AboutUs from "../pages/Main/AboutUs.jsx";
 import Login from "../pages/Main/Login.jsx";
+import ContactUs from "../pages/Main/ContactUs.jsx";
+import Team from "../pages/Main/Team.jsx";
 
 const MainRoutes = {
   path: "/",
@@ -18,6 +21,18 @@ const MainRoutes = {
           element: <Login />,
         },
       ],
+    },
+    {
+      path: "about-us",
+      element: <AboutUs />,
+    },
+    {
+      path: "contact-us",
+      element: <ContactUs />,
+    },
+    {
+      path: "team",
+      element: <Team />,
     },
   ],
 };
