@@ -112,23 +112,24 @@ export default function Footer() {
               >
                 <IconButton
                   color="inherit"
-                  // href="https://github.com/mui"
+                  href="https://github.com/BoostrNetWave/Adethix"
                   aria-label="GitHub"
+                  about="_blank"
                   sx={{ alignSelf: "center" }}
                 >
                   <FacebookIcon />
                 </IconButton>
-                <IconButton
+                {/* <IconButton
                   color="inherit"
                   // href="https://x.com/MaterialUI"
                   aria-label="X"
                   sx={{ alignSelf: "center" }}
                 >
                   <TwitterIcon />
-                </IconButton>
+                </IconButton> */}
                 <IconButton
                   color="inherit"
-                  // href="https://www.linkedin.com/company/mui/"
+                  href="https://www.linkedin.com/company/boostr-netwave"
                   aria-label="LinkedIn"
                   sx={{ alignSelf: "center" }}
                 >
@@ -242,7 +243,7 @@ export default function Footer() {
               component={RouterLink}
               color="text.secondary"
               sx={{ cursor: "pointer" }}
-              to="about-us"
+              to="/about-us"
             >
               About us
             </Link>
@@ -250,7 +251,7 @@ export default function Footer() {
               component={RouterLink}
               color="text.secondary"
               sx={{ cursor: "pointer" }}
-              to="contact-us"
+              to="/contact-us"
             >
               Contact us
             </Link>
@@ -258,7 +259,7 @@ export default function Footer() {
               component={RouterLink}
               color="text.secondary"
               sx={{ cursor: "pointer" }}
-              to="team"
+              to="/team"
             >
               Our Team
             </Link>
