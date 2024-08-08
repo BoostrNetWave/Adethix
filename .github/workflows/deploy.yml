@@ -47,15 +47,17 @@ jobs:
 
             # Clone repository
             cd /var/www/
-            git clone https://github.com/BoostrNetWave/Adethix.git
+            # git clone https://github.com/BoostrNetWave/Adethix.git
+            git pull
 
             # Install dependencies and build
-            cd /var/www/server/
+            cd /var/www/Adethix/server/
             npm install
             # npm run build
 
             # Start backend with PM2
             pm2 restart all || pm2 start app.js --name backend
+            pm2 save
 
             # Set up Nginx for frontend
             # sudo cp -r build/* /var/www/html/
