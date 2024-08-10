@@ -15,7 +15,7 @@ async function displayAd() {
         const element = document.getElementById("adethix");
         if (!element) return;
 
-        const baseUrl = "http://localhost:8080/api/track/getad";
+        const baseUrl = "https://adethix.com/api/track/getad";
 
         const params = new URLSearchParams({
             adType: element.dataset.bnType,
@@ -93,7 +93,7 @@ async function displayAd() {
                 // ad via link
                 let sponsorLink = document.createElement('a');
                 sponsorLink.innerText = "ads via Adethix"
-                sponsorLink.href = 'http://localhost:8080/';
+                sponsorLink.href = 'https://adethix.com/';
                 sponsorLink.className = "adethix-poweredby";
                 sponsorLink.target = "_blank";
                 sponsorLink.rel = "sponsored";
@@ -225,7 +225,7 @@ async function displayAd() {
 
                 let sponsorLink = document.createElement('a');
                 sponsorLink.innerText = "ads via Adethix"
-                sponsorLink.href = 'http://localhost:5173/';
+                sponsorLink.href = 'https://adethix.com/';
                 sponsorLink.className = "adethix-poweredby";
                 sponsorLink.target = "_blank";
                 sponsorLink.rel = "sponsored";
@@ -275,7 +275,7 @@ async function displayAd() {
                 button.addEventListener("click", (e) => {
                     const dataset = element.dataset;
 
-                    const url = "http://localhost:8080/api/track/clicks";
+                    const url = "https://adethix.com/api/track/clicks";
                     const data = {
                         ad: dataset.bnAd,
                         publisher: dataset.bnPublisher,
@@ -374,7 +374,7 @@ async function displayAd() {
                 // ad via link
                 let sponsorLink = document.createElement('a');
                 sponsorLink.innerText = "ads via Adethix"
-                sponsorLink.href = 'http://localhost:8080/';
+                sponsorLink.href = 'https://adethix.com/';
                 sponsorLink.className = "adethix-poweredby";
                 sponsorLink.target = "_blank";
                 sponsorLink.rel = "sponsored";
@@ -503,7 +503,7 @@ async function displayAd() {
                 }
                 const dataset = element.dataset;
 
-                const url = "http://localhost:8080/api/track/clicks";
+                const url = "https://adethix.com/api/track/clicks";
                 const data = {
                     ad: dataset.bnAd,
                     publisher: dataset.bnPublisher,
@@ -545,7 +545,7 @@ const observerAd = new window.IntersectionObserver(([entry], observer) => {
     if (entry.isIntersecting) {
         const dataset = entry.target.dataset;
 
-        const url = "http://localhost:8080/api/track/views";
+        const url = "https://adethix.com/api/track/views";
         const data = {
             ad: dataset.bnAd,
             publisher: dataset.bnPublisher,
