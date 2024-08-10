@@ -6,7 +6,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { Link as RouterLink } from "react-router-dom";
 
-export default function TeamComponent() {
+export default function TermsOfUseComponent() {
   return (
     <Box
       id="about-us"
@@ -39,9 +39,24 @@ export default function TeamComponent() {
               textAlign: "center",
             }}
           >
-            Meet our team
+            Terms of use
           </Typography>
-          
+
+          <Typography
+            textAlign="center"
+            color="text.secondary"
+            sx={{ alignSelf: "center", mb: -2 }}
+            variant="h6"
+          >
+            Data Sharing
+          </Typography>
+          <p>
+            Welcome to in Adethix, kindly read these terms and condition of use
+            carefully before you start to use this site. you accept these terms
+            and condition and that you agree to abide by them. if you do not
+            agree to these terms and condition, kindly refrain from using our
+            site.
+          </p>
 
           <Typography
             textAlign="center"

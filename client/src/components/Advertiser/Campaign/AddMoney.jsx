@@ -13,7 +13,7 @@ function AddMoney({ campaign }) {
   useDocumentTitle(
     campaign?.name ? `Add Money: ${campaign.name}` : "Add Money"
   );
-    // console.log(campaign);
+  // console.log(campaign);
 
   let [amount, setAmount] = useState("");
 
@@ -58,9 +58,10 @@ function AddMoney({ campaign }) {
           key,
           amount: order.amount,
           currency: "USD",
-          name: "Acme Corp", // required company name // 5267 3181 8797 5449 -- card 
+          name: "Adethix", // required company name // 5267 3181 8797 5449 -- card
           description: "campaign money add",
           order_id: order.id,
+          image: "/siteicon.png",
           handler: async function (response) {
             // console.log(response);
 
@@ -149,10 +150,10 @@ function AddMoney({ campaign }) {
         </RouterLink>
       </Box>
 
-      <Typography variant="h6"> 
+      <Typography variant="h6">
         Total amount: {campaign?.totalAmount}
       </Typography>
-      <Typography variant="h6"> 
+      <Typography variant="h6">
         Balance amount: {campaign?.balanceAmount}
       </Typography>
 

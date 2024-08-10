@@ -65,35 +65,9 @@ export default function ContactUsComponent() {
           </Typography>
           <p>
             Email: For general inquiries, partnerships, or support, please email
-            us at [email@example.com]. We strive to respond to all emails within
-            24 hours.
+            us at [adethix630@gmail.com] <a href="mailto:adethix630@gmail.com">Adethix</a>. We strive to
+            respond to all emails within 24 hours.
           </p>
-          <p>
-            Phone: You can also call us at [Phone Number]. Our support team is
-            available Monday through Friday, from 9:00 AM to 5:00 PM (Your Time
-            Zone).
-          </p>
-          <p>
-            Mailing Address: [Your Company Name] [Street Address] [City, State,
-            ZIP Code] [Country]
-          </p>
-
-          <Typography
-            textAlign="center"
-            color="text.secondary"
-            sx={{ alignSelf: "center", mb: -2 }}
-            variant="h6"
-          >
-            Connect with Us on Social Media
-          </Typography>
-          <p>
-          Stay updated with the latest news, updates, and community events by following us on social media:
-          </p>
-          <ul>
-            <li>Twitter: @YourCompany</li>
-            <li>LinkedIn: YourCompany</li>
-            <li>Facebook: YourCompany</li>
-          </ul>
 
           <Typography
             textAlign="center"

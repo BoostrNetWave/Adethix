@@ -6,7 +6,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { Link as RouterLink } from "react-router-dom";
 
-export default function TeamComponent() {
+export default function PrivacyPolicyComponent() {
   return (
     <Box
       id="about-us"
@@ -39,9 +39,23 @@ export default function TeamComponent() {
               textAlign: "center",
             }}
           >
-            Meet our team
+            Privacy Policy
           </Typography>
-          
+
+          <Typography
+            textAlign="center"
+            color="text.secondary"
+            sx={{ alignSelf: "center", mb: -2 }}
+            variant="h6"
+          >
+            Data Sharing
+          </Typography>
+          <p>
+            We don’t share your personal information with other or any external
+            parties. We only collect the data to improve our service by
+            collecting feedbacks of our site. Again, We don’t share your
+            personal information with other or any external parties.
+          </p>
 
           <Typography
             textAlign="center"

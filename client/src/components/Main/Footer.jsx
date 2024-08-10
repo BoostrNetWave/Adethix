@@ -12,9 +12,10 @@ import FacebookIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/X";
 import siteLogo from "../../assets/logo.png";
+import footerLogo from "../../assets/footer-logo.png";
 
 const logoStyle = {
-  width: "150px",
+  width: "120px",
   height: "auto",
 };
 
@@ -71,9 +72,8 @@ export default function Footer() {
           {/* <Box sx={{ width: { sm: "60%" } }}> */}
           <Box sx={{ width: { xs: "300px", sm: "300px" } }}>
             {/* brand logo */}
-            <Box sx={{ ml: "-15px" }}>
-              
-              <img src={siteLogo} alt="adethix" style={logoStyle}/>
+            <Box>
+              <img src={footerLogo} alt="adethix" style={logoStyle} />
             </Box>
 
             {/* brand links */}
@@ -88,17 +88,25 @@ export default function Footer() {
                 // borderColor: "divider",
               }}
             >
-              {/* <Box>
-                <Link component={RouterLink} color="text.secondary" to="privacy-policy">
+              <Box>
+                <Link
+                  component={RouterLink}
+                  color="text.secondary"
+                  to="/privacy-policy"
+                >
                   Privacy Policy
                 </Link>
                 <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
                   &nbsp;•&nbsp;
                 </Typography>
-                <Link component={RouterLink} color="text.secondary" to="terms-of-service">
-                  Terms of Service
+                <Link
+                  component={RouterLink}
+                  color="text.secondary"
+                  to="/terms-of-use"
+                >
+                  Terms of Use
                 </Link>
-              </Box> */}
+              </Box>
               <Copyright />
               <Stack
                 direction="row"

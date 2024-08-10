@@ -4,6 +4,8 @@ import AboutUs from "../pages/Main/AboutUs.jsx";
 import Login from "../pages/Main/Login.jsx";
 import ContactUs from "../pages/Main/ContactUs.jsx";
 import Team from "../pages/Main/Team.jsx";
+import Terms from "../pages/Main/Terms.jsx";
+import PrivacyPolicy from "../pages/Main/PrivacyPolicy.jsx";
 
 const MainRoutes = {
   path: "/",
@@ -33,6 +35,14 @@ const MainRoutes = {
     {
       path: "team",
       element: <Team />,
+    },
+    {
+      path: "terms-of-use",
+      element: <Terms />,
+    },
+    {
+      path: "privacy-policy",
+      element: <PrivacyPolicy />,
     },
   ],
 };
