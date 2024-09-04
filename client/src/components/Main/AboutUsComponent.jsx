@@ -73,22 +73,6 @@ export default function AboutUsComponent() {
             stay ahead in the ever-evolving tech landscape.
           </p>
 
-          <Typography
-            textAlign="center"
-            color="text.secondary"
-            sx={{ alignSelf: "center", mb: -2 }}
-            variant="h6"
-          >
-            Join Us
-          </Typography>
-          <p>
-            Whether you are a developer looking for the latest tools and
-            resources or a company aiming to reach a highly engaged audience,
-            Adethix is here to help you connect and grow. Join us on this
-            journey to empower the developer community and drive innovation
-            forward.
-          </p>
-
           <Box
             textAlign="center"
             sx={{

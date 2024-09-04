@@ -1,10 +1,29 @@
-import { alpha } from "@mui/material";
+import { alpha, Card, CardContent, CardMedia, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { Link as RouterLink } from "react-router-dom";
+
+const ImageCard = ({ image, title, description }) => {
+  return (
+    <Card sx={{ maxWidth: 750 }}>
+      <CardMedia component="img" height="350" image={image} alt={title} />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {description}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        contact@boostrnatewave.com
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};
 
 export default function ContactUsComponent() {
   return (
@@ -41,49 +60,23 @@ export default function ContactUsComponent() {
           >
             Contact Us
           </Typography>
-          <Typography
-            textAlign="center"
-            color="text.secondary"
-            sx={{ alignSelf: "center", mb: -2 }}
-            variant="h6"
-          >
-            We&apos;re Here to Help!
-          </Typography>
-          <p>
-            At Adethix, we value open communication and are always here to
-            assist you. Whether you have questions, need support, or want to
-            share your feedback, don't hesitate to reach out to us.
-          </p>
 
-          <Typography
-            textAlign="center"
-            color="text.secondary"
-            sx={{ alignSelf: "center", mb: -2 }}
-            variant="h6"
-          >
-            How to Reach Us
-          </Typography>
-          <p>
-            Email: For general inquiries, partnerships, or support, please email
-            us at [adethix630@gmail.com] <a href="mailto:adethix630@gmail.com">Adethix</a>. We strive to
-            respond to all emails within 24 hours.
-          </p>
-
-          <Typography
-            textAlign="center"
-            color="text.secondary"
-            sx={{ alignSelf: "center", mb: -2 }}
-            variant="h6"
-          >
-            Join Us
-          </Typography>
-          <p>
-            Whether you are a developer looking for the latest tools and
-            resources or a company aiming to reach a highly engaged audience,
-            Adethix is here to help you connect and grow. Join us on this
-            journey to empower the developer community and drive innovation
-            forward.
-          </p>
+          <Grid container spacing={3} justifyContent="center">
+            <Grid item>
+              <ImageCard
+                image="https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                title="Bajar Sahi, Banapur, Odisha, India"
+                description="(+91) 955-667-9622"
+              />
+            </Grid>
+            <Grid item>
+              <ImageCard
+                image="https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                title="Kiit Squre, Patia Bhubaneswar, Odisha, India"
+                description="(+91) 955-662-7680"
+              />
+            </Grid>
+          </Grid>
 
           <Box
             textAlign="center"

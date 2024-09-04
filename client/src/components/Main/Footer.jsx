@@ -107,6 +107,16 @@ export default function Footer() {
                   Terms of Use
                 </Link>
               </Box>
+              <Box>
+                <Link
+                  component={RouterLink}
+                  color="text.secondary"
+                  to="/terms-and-conditions"
+                >
+                  Terms and Conditions
+                </Link>
+              </Box>
+
               <Copyright />
               <Stack
                 direction="row"
@@ -179,6 +189,14 @@ export default function Footer() {
               to={"/publisher/dashboard"}
             >
               Dashboard
+            </Link>
+            <Link
+              component={RouterLink}
+              color="text.secondary"
+              sx={{ cursor: "pointer" }}
+              to={"/publisher-policy"}
+            >
+              Publisher Policy
             </Link>
             {/* <Link
               component={RouterLink}
@@ -270,6 +288,14 @@ export default function Footer() {
               to="/team"
             >
               Our Team
+            </Link>
+            <Link
+              component={RouterLink}
+              color="text.secondary"
+              sx={{ cursor: "pointer" }}
+              to="/alternative-to-google-ads"
+            >
+              Google Ads Comparison
             </Link>
           </Box>
         </Box>

@@ -6,6 +6,10 @@ import ContactUs from "../pages/Main/ContactUs.jsx";
 import Team from "../pages/Main/Team.jsx";
 import Terms from "../pages/Main/Terms.jsx";
 import PrivacyPolicy from "../pages/Main/PrivacyPolicy.jsx";
+import PublisherPolicyPage from "../pages/Publisher/PublisherPolicyPage.jsx";
+import TermsAndCondition from "../pages/Main/TermsAndCondition.jsx"
+import GoogleAdsComparision from "../pages/Main/GoogleAdsComparision.jsx"
+
 
 const MainRoutes = {
   path: "/",
@@ -37,6 +41,10 @@ const MainRoutes = {
       element: <Team />,
     },
     {
+      path: "alternative-to-google-ads",
+      element: <GoogleAdsComparision />,
+    },
+    {
       path: "terms-of-use",
       element: <Terms />,
     },
@@ -44,6 +52,14 @@ const MainRoutes = {
       path: "privacy-policy",
       element: <PrivacyPolicy />,
     },
+    {
+      path: "publisher-policy",
+      element: <PublisherPolicyPage />,
+    },
+    {
+      path: "terms-and-conditions",
+      element: <TermsAndCondition />,
+    }
   ],
 };
 
