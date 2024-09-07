@@ -24,8 +24,13 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" mt={1}>
       {"Copyright © "}
       <Link component={RouterLink} to={import.meta.env.VITE_HOME_PAGE}>
-        Adethix&nbsp;
+        Adethix
+      </Link>{" "}
+      powered by{" "}
+      <Link component={RouterLink} to="https://boostrnetwave.com/contact-us/">
+        Boostr Netwave Solutions
       </Link>
+      &nbsp;
       {new Date().getFullYear()}
     </Typography>
   );
@@ -137,14 +142,6 @@ export default function Footer() {
                 >
                   <FacebookIcon />
                 </IconButton>
-                {/* <IconButton
-                  color="inherit"
-                  // href="https://x.com/MaterialUI"
-                  aria-label="X"
-                  sx={{ alignSelf: "center" }}
-                >
-                  <TwitterIcon />
-                </IconButton> */}
                 <IconButton
                   color="inherit"
                   href="https://www.linkedin.com/company/boostr-netwave"
@@ -198,22 +195,14 @@ export default function Footer() {
             >
               Publisher Policy
             </Link>
-            {/* <Link
-              component={RouterLink}
-              color="text.secondary"
-              sx={{ cursor: "pointer" }}
-              to={"/publisher/privacy-policy"}
-            >
-              Publisher Policy
-            </Link>
             <Link
               component={RouterLink}
               color="text.secondary"
               sx={{ cursor: "pointer" }}
-              to={"/publisher/ad-placement"}
+              to={"/publishers/faq"}
             >
-              Ad placement
-            </Link> */}
+              Publisher FAQ
+            </Link>
           </Box>
           <Box
             sx={{
@@ -235,22 +224,22 @@ export default function Footer() {
             >
               Dashboard
             </Link>
-            {/* <Link
+            <Link
               component={RouterLink}
               color="text.secondary"
               sx={{ cursor: "pointer" }}
-              to="/advertiser/privacy-policy"
+              to="/pricing"
             >
-              Advertiser Policy
+              Pricing
             </Link>
             <Link
               component={RouterLink}
               color="text.secondary"
               sx={{ cursor: "pointer" }}
-              to="/advertiser/campaign-terms"
+              to={"/advertisers/faq"}
             >
-              Campaign Terms
-            </Link> */}
+              Advertiser FAQ
+            </Link>
           </Box>
 
           <Box

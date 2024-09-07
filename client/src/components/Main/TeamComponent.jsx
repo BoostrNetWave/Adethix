@@ -1,10 +1,32 @@
-import { alpha } from "@mui/material";
+import { alpha, Card, CardContent, CardMedia, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { Link as RouterLink } from "react-router-dom";
+import { Link, Link as RouterLink } from "react-router-dom";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
+const ImageCard = ({ image, title, description, linkdin }) => {
+  return (
+    <Card sx={{ width: "100%" }}>
+      <CardMedia component="img" height="350" image={image} alt={title} />
+      <CardContent>
+        <Typography gutterBottom variant="h5" textAlign="center">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" textAlign="center">
+          {description}
+        </Typography>
+        <Typography textAlign="center" sx={{ mt: 2 }}>
+          <Link to={linkdin}>
+            <LinkedInIcon />
+          </Link>
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};
 
 export default function TeamComponent() {
   return (
@@ -39,9 +61,31 @@ export default function TeamComponent() {
               textAlign: "center",
             }}
           >
-            Meet our team
+            Meet the team
           </Typography>
-          
+
+          <Typography variant="h4">Core team</Typography>
+
+          <Grid container spacing={3} justifyContent="center">
+            <Grid item sx={{ width: "50%" }} xs={12} sm={6}>
+              <ImageCard
+                image="https://boostrnetwave.com/wp-content/uploads/2024/06/Nikhil.jpeg"
+                title="Nikhil Patra"
+                description="Co-Founder and CEO"
+                linkdin="https://www.linkedin.com/in/nikhil-patra/"
+              />
+            </Grid>
+            <Grid item sx={{ width: "50%" }} xs={12} sm={6}>
+              <ImageCard
+                image="https://boostrnetwave.com/wp-content/uploads/2024/06/Sushil-2.jpeg"
+                title="Sushil Puhan"
+                description="Co-Founder and COO"
+                linkdin="https://www.linkedin.com/in/sushil-puhan-20a619200/"
+              />
+            </Grid>
+          </Grid>
+
+          {/* <Typography variant="h4">Developer team</Typography> */}
 
           <Typography
             textAlign="center"

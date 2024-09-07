@@ -7,9 +7,11 @@ import Team from "../pages/Main/Team.jsx";
 import Terms from "../pages/Main/Terms.jsx";
 import PrivacyPolicy from "../pages/Main/PrivacyPolicy.jsx";
 import PublisherPolicyPage from "../pages/Publisher/PublisherPolicyPage.jsx";
-import TermsAndCondition from "../pages/Main/TermsAndCondition.jsx"
-import GoogleAdsComparision from "../pages/Main/GoogleAdsComparision.jsx"
-
+import TermsAndCondition from "../pages/Main/TermsAndCondition.jsx";
+import GoogleAdsComparision from "../pages/Main/GoogleAdsComparision.jsx";
+import Pricing from "../pages/Main/Pricing.jsx";
+import PublisherFAQ from "../pages/Main/PublisherFAQ.jsx"
+import AdvertiserFAQ from "../pages/Main/AdvertiserFAQ.jsx"
 
 const MainRoutes = {
   path: "/",
@@ -59,7 +61,19 @@ const MainRoutes = {
     {
       path: "terms-and-conditions",
       element: <TermsAndCondition />,
-    }
+    },
+    {
+      path: "pricing",
+      element: <Pricing />,
+    },
+    {
+      path: "publishers/faq",
+      element: <PublisherFAQ />,
+    },
+    {
+      path: "advertisers/faq",
+      element: <AdvertiserFAQ />,
+    },
   ],
 };
 

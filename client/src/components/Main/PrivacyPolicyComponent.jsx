@@ -9,7 +9,7 @@ import { Link as RouterLink } from "react-router-dom";
 export default function PrivacyPolicyComponent() {
   return (
     <Box
-      id="about-us"
+      id="privacy-policy"
       sx={(theme) => ({
         width: "100%",
         backgroundImage:

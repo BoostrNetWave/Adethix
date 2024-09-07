@@ -8,8 +8,8 @@ import { Link as RouterLink } from "react-router-dom";
 
 const ImageCard = ({ image, title, description }) => {
   return (
-    <Card sx={{ maxWidth: 750 }}>
-      <CardMedia component="img" height="350" image={image} alt={title} />
+    <Card sx={{ minWidth: 500 }}>
+      <CardMedia component="img" image={image} alt={title} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}
@@ -62,7 +62,7 @@ export default function ContactUsComponent() {
           </Typography>
 
           <Grid container spacing={3} justifyContent="center">
-            <Grid item>
+            <Grid item >
               <ImageCard
                 image="https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 title="Bajar Sahi, Banapur, Odisha, India"
