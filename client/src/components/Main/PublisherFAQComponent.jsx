@@ -274,7 +274,7 @@ export default function PublisherFAQComponent() {
               <AccordionDetails>
                 <Typography>
                   Simply fill out our{" "}
-                  <Link to="/publisher/signup">publisher application</Link> form
+                  <Link to="/join-as-publisher">publisher application</Link> form
                   with some information, and we'll get back to you right away.
                 </Typography>
               </AccordionDetails>
@@ -297,7 +297,7 @@ export default function PublisherFAQComponent() {
               variant="contained"
               size="medium"
               LinkComponent={RouterLink}
-              to="/publisher/signup"
+              to="/join-as-publisher"
             >
               Earn money from website
             </Button>

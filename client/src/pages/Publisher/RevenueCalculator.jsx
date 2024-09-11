@@ -5,13 +5,13 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import AppAppBar from "../../components/Main/AppAppBar";
-import PublisherSignInComponent from "../../components/Publisher/PublisherSignInComponent";
+import RevenueCalculatorComponent from "../../components/Publisher/RevenueCalculatorComponent";
 import Footer from "../../components/Main/Footer";
 import getLPTheme from "./getLPTheme";
 import useDocumentTitle from "../../useDocumentTitle";
 
-export default function PublisherSignIn() {
-  useDocumentTitle("Publisher sign in - Adethix");
+export default function RevenueCalculator() {
+  useDocumentTitle("Revenue calculator - Adethix");
   const [mode, setMode] = React.useState("light");
   // const [showCustomTheme, setShowCustomTheme] = React.useState(true);
   const LPtheme = createTheme(getLPTheme(mode));
@@ -25,7 +25,7 @@ export default function PublisherSignIn() {
     <ThemeProvider theme={LPtheme}>
       <CssBaseline />
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
-      <PublisherSignInComponent />
+      <RevenueCalculatorComponent />
       <Box sx={{ bgcolor: "background.default" }}>
         <Footer />
       </Box>

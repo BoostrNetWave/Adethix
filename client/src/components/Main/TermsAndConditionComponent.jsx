@@ -37,6 +37,7 @@ export default function TermsAndConditionComponent() {
               flexDirection: { xs: "column", md: "row" },
               alignSelf: "center",
               textAlign: "center",
+              mb: 4
             }}
           >
             Terms and Conditions
@@ -69,27 +70,27 @@ export default function TermsAndConditionComponent() {
             referring to the same.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Cookies
           </Typography>
           <p>
             We employ the use of cookies. By accessing AdEthix, you agreed to
-            use cookies in agreement with the Boostr Netwave Sol's Pvt. Ltd.
+            use cookies in agreement with the Boostr Netwave Sol&apos;s Pvt. Ltd.
             Privacy Policy.
           </p>
           <p>
-            Most interactive websites use cookies to let us retrieve the user's
+            Most interactive websites use cookies to let us retrieve the user&apos;s
             details for each visit. Cookies are used by our website to enable
             the functionality of certain areas to make it easier for people
             visiting our website. Some of our affiliate/advertising partners may
             also use cookies.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             License
           </Typography>
           <p>
-            Unless otherwise stated, Boostr Netwave Sol's Pvt. Ltd. and/or its
+            Unless otherwise stated, Boostr Netwave Sol&apos;s Pvt. Ltd. and/or its
             licensors own the intellectual property rights for all material on
             AdEthix. All intellectual property rights are reserved. You may
             access this from AdEthix for your own personal use subject to
@@ -106,18 +107,18 @@ export default function TermsAndConditionComponent() {
           <p>
             Parts of this website offer an opportunity for users to post and
             exchange opinions and information in certain areas of the website.
-            Boostr Netwave Sol's Pvt does not filter, edit, publish or review
+            Boostr Netwave Sol&appos;s Pvt does not filter, edit, publish or review
             Comments prior to their presence on the website. Comments do not
-            reflect the views and opinions of Boostr Netwave Sol's Pvt,its
+            reflect the views and opinions of Boostr Netwave Sol&apos;s Pvt,its
             agents and/or affiliates. Comments reflect the views and opinions of
             the person who posts their views and opinions. To the extent
-            permitted by applicable laws, Boostr Netwave Sol's Pvt shall not be
+            permitted by applicable laws, Boostr Netwave Sol&apos;s Pvt shall not be
             liable for the Comments or for any liability, damages or expenses
             caused and/or suffered as a result of any use of and/or posting of
             and/or appearance of the Comments on this website.
           </p>
           <p>
-            Boostr Netwave Sol's Pvt reserves the right to monitor all Comments
+            Boostr Netwave Sol&apos;s Pvt reserves the right to monitor all Comments
             and to remove any Comments which can be considered inappropriate,
             offensive or causes breach of these Terms and Conditions.
           </p>
@@ -143,12 +144,12 @@ export default function TermsAndConditionComponent() {
             </li>
           </ul>
           <p>
-            You hereby grant Boostr Netwave Sol's Pvt a non-exclusive license to
+            You hereby grant Boostr Netwave Sol&apos;s Pvt a non-exclusive license to
             use, reproduce, edit and authorize others to use, reproduce and edit
             any of your Comments in any and all forms, formats or media.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Hyperlinking to our Content
           </Typography>
           <p>
@@ -175,7 +176,7 @@ export default function TermsAndConditionComponent() {
             other Website information so long as the link: (a) is not in any way
             deceptive; (b) does not falsely imply sponsorship, endorsement or
             approval of the linking party and its products and/or services; and
-            (c) fits within the context of the linking party's site.
+            (c) fits within the context of the linking party&apos;s site.
           </p>
           <p>
             We may consider and approve other link requests from the following
@@ -198,7 +199,7 @@ export default function TermsAndConditionComponent() {
             or to our accredited businesses; (b) the organization does not have
             any negative records with us; (c) the benefit to us from the
             visibility of the hyperlink compensates the absence of Boostr
-            Netwave Sol's Pvt; and (d) the link is in the context of general
+            Netwave Sol&apos;s Pvt; and (d) the link is in the context of general
             resource information.
           </p>
           <p>
@@ -206,12 +207,12 @@ export default function TermsAndConditionComponent() {
             (a) is not in any way deceptive; (b) does not falsely imply
             sponsorship, endorsement or approval of the linking party and its
             products or services; and (c) fits within the context of the linking
-            party's site.
+            party&apos;s site.
           </p>
           <p>
             If you are one of the organizations listed in paragraph 2 above and
             are interested in linking to our website, you must inform us by
-            sending an email to Boostr Netwave Sol's Pvt. Please include your
+            sending an email to Boostr Netwave Sol&apos;s Pvt. Please include your
             name, your organization name, contact information as well as the URL
             of your site, a list of any URLs from which you intend to link to
             our Website, and a list of the URLs on our site to which you would
@@ -224,15 +225,15 @@ export default function TermsAndConditionComponent() {
             <li>
               By use of any other description of our Website being linked to
               that makes sense within the context and format of content on the
-              linking party's site.
+              linking party&apos;s site.
             </li>
           </ul>
           <p>
-            No use of Boostr Netwave Sol's Pvt's logo or other artwork will be
+            No use of Boostr Netwave Sol&apos;s Pvt&apos;s logo or other artwork will be
             allowed for linking absent a trademark license agreement.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             iFrames
           </Typography>
           <p>
@@ -241,7 +242,7 @@ export default function TermsAndConditionComponent() {
             presentation or appearance of our Website.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Content Liability
           </Typography>
           <p>
@@ -253,7 +254,7 @@ export default function TermsAndConditionComponent() {
             or other violation of, any third party rights.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Reservation of Rights
           </Typography>
           <p>
@@ -265,7 +266,7 @@ export default function TermsAndConditionComponent() {
             follow these linking terms and conditions.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Removal of links from our website
           </Typography>
           <p>
@@ -281,7 +282,7 @@ export default function TermsAndConditionComponent() {
             the website is kept up to date.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Disclaimer
           </Typography>
           <p>
@@ -336,7 +337,7 @@ export default function TermsAndConditionComponent() {
               variant="text"
               size="medium"
               LinkComponent={RouterLink}
-              to="/advertiser/signup"
+              to="/join-as-advertiser"
             >
               Run a Advertising Campaign
             </Button>
@@ -345,7 +346,7 @@ export default function TermsAndConditionComponent() {
               variant="contained"
               size="medium"
               LinkComponent={RouterLink}
-              to="/publisher/signup"
+              to="/join-as-publisher"
             >
               Earn money from website
             </Button>

@@ -38,6 +38,7 @@ export default function TermsOfUseComponent() {
               flexDirection: { xs: "column", md: "row" },
               alignSelf: "center",
               textAlign: "center",
+              mb: 4
             }}
           >
             Terms of use
@@ -76,7 +77,7 @@ export default function TermsOfUseComponent() {
             available to you in the event of a dispute.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Accounts
           </Typography>
           <p>
@@ -98,7 +99,7 @@ export default function TermsOfUseComponent() {
             from your failure to comply with the above requirements.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Access to the Site
           </Typography>
           <p>
@@ -144,7 +145,7 @@ export default function TermsOfUseComponent() {
             reserve all rights not granted in these Terms.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             User Content
           </Typography>
           <p>
@@ -234,7 +235,7 @@ export default function TermsOfUseComponent() {
             such claim, action or proceeding upon becoming aware of it.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Third-Party Links & Ads; Other Users
           </Typography>
           <p>
@@ -278,7 +279,7 @@ export default function TermsOfUseComponent() {
             the debtor.”
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Disclaimers
           </Typography>
           <p>
@@ -302,7 +303,7 @@ export default function TermsOfUseComponent() {
             above limitation may not apply to you.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Limitation on Liability
           </Typography>
           <p>
@@ -348,7 +349,7 @@ export default function TermsOfUseComponent() {
             Sections 4 through 10.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Copyright Policy
           </Typography>
           <p>
@@ -399,7 +400,7 @@ export default function TermsOfUseComponent() {
             infringement.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             General
           </Typography>
           <p>
@@ -648,7 +649,7 @@ export default function TermsOfUseComponent() {
             Marks.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Contact Information
           </Typography>
           <p>
@@ -681,7 +682,7 @@ export default function TermsOfUseComponent() {
               variant="text"
               size="medium"
               LinkComponent={RouterLink}
-              to="/advertiser/signup"
+              to="/join-as-advertiser"
             >
               Run a Advertising Campaign
             </Button>
@@ -690,7 +691,7 @@ export default function TermsOfUseComponent() {
               variant="contained"
               size="medium"
               LinkComponent={RouterLink}
-              to="/publisher/signup"
+              to="/join-as-publisher"
             >
               Earn money from website
             </Button>

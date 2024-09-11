@@ -37,6 +37,7 @@ export default function PublisherPolicy() {
               flexDirection: { xs: "column", md: "row" },
               alignSelf: "center",
               textAlign: "center",
+              mb: 4
             }}
           >
             AdEthix Publisher Policy
@@ -48,7 +49,7 @@ export default function PublisherPolicy() {
             privacy. This Publisher Policy outlines the requirements and
             guidelines for publishers participating in the AdEthix network.
           </p>
-          <strong>1. Eligibility Criteria</strong>
+          <strong style={{marginBottom: "6px"}}>1. Eligibility Criteria</strong>
           <strong>1.1 Quality Content</strong>
           <p>
             Publishers must provide high-quality content that is informative,
@@ -69,7 +70,7 @@ export default function PublisherPolicy() {
             questionable ethics, are not eligible.
           </p>
 
-          <strong>2. Prohibited Content</strong>
+          <strong style={{marginBottom: "6px"}}>2. Prohibited Content</strong>
           <strong>2.1 Hateful Content</strong>
           <p>
             Any content promoting hate speech, violence, or discrimination based
@@ -93,7 +94,7 @@ export default function PublisherPolicy() {
             fake news, and conspiracy theories.
           </p>
 
-          <strong>3. Ad Placement and Behavior</strong>
+          <strong style={{marginBottom: "6px"}}>3. Ad Placement and Behavior</strong>
           <strong>3.1 User Experience</strong>
           <p>
             Ads should not interfere with the user experience. Pop-ups,
@@ -114,7 +115,7 @@ export default function PublisherPolicy() {
             misleading labels, or exaggerated calls to action.
           </p>
 
-          <strong>4. Data Privacy and Security</strong>
+          <strong style={{marginBottom: "6px"}}>4. Data Privacy and Security</strong>
           <strong>4.1 User Privacy</strong>
           <p>
             AdEthix is committed to protecting user privacy. Publishers must
@@ -129,7 +130,7 @@ export default function PublisherPolicy() {
             strongly preferred.
           </p>
 
-          <strong>5. Termination and Enforcement</strong>
+          <strong style={{marginBottom: "6px"}}>5. Termination and Enforcement</strong>
           <strong>5.1 Violation of Policy</strong>
           <p>
             Failure to comply with this Publisher Policy may result in the
@@ -175,7 +176,7 @@ export default function PublisherPolicy() {
               variant="contained"
               size="medium"
               LinkComponent={RouterLink}
-              to="/publisher/signup"
+              to="/join-as-publisher"
             >
               Earn money from website
             </Button>

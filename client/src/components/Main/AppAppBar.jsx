@@ -143,7 +143,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 variant="text"
                 size="small"
                 LinkComponent={RouterLink}
-                to="/publisher/signup"
+                to="/join-as-publisher"
               >
                 Join as Publisher
               </Button>
@@ -152,7 +152,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 variant="contained"
                 size="small"
                 LinkComponent={RouterLink}
-                to="/advertiser/signup"
+                to="/join-as-advertiser"
               >
                 Join as Advertiser
               </Button>
@@ -184,10 +184,10 @@ function AppAppBar({ mode, toggleColorMode }) {
                       flexGrow: 1,
                     }}
                   >
-                    <ToggleColorMode
+                    {/* <ToggleColorMode
                       mode={mode}
                       toggleColorMode={toggleColorMode}
-                    />
+                    /> */}
                   </Box>
                   {/* <MenuItem onClick={() => scrollToSection("features")}>
                     Features
@@ -211,7 +211,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                       variant="outlined"
                       sx={{ width: "100%" }}
                       LinkComponent={RouterLink}
-                      to="/publisher/signup"
+                      to="/join-as-publisher"
                     >
                       Join as Publisher
                     </Button>
@@ -222,7 +222,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                       variant="contained"
                       sx={{ width: "100%" }}
                       LinkComponent={RouterLink}
-                      to="/advertiser/signup"
+                      to="/join-as-advertiser"
                     >
                       Join as Advertiser
                     </Button>

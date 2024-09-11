@@ -64,6 +64,48 @@ export default function TeamComponent() {
             Meet the team
           </Typography>
 
+          <Typography variant="h4">Technical team</Typography>
+
+          <Grid container spacing={3} justifyContent="center">
+          <Grid item sx={{ width: "50%" }} xs={12} sm={6}>
+              <ImageCard
+                image="https://boostrnetwave.com/wp-content/uploads/2024/06/Lingaraj.jpg"
+                title="Lingaraj Senapati"
+                description="Co-Founder and CTO"
+                linkdin="https://www.linkedin.com/in/lingarajsenapati1/"
+              />
+            </Grid>
+            <Grid item sx={{ width: "50%" }} xs={12} sm={6}>
+              <Card sx={{ width: "100%" }}>
+                <CardMedia
+                  component="img"
+                  height="350"
+                  image="https://res.cloudinary.com/dcwfpqfcm/image/upload/v1725900210/My%20Folder/my-image-removebg_1_xhsypl.png"
+                  alt="Kallol Khatua"
+                  sx={{ objectFit: "contain" }}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" textAlign="center">
+                    Kallol Khatua
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    textAlign="center"
+                  >
+                    Product Lead
+                  </Typography>
+                  <Typography textAlign="center" sx={{ mt: 2 }}>
+                    <Link to="https://www.linkedin.com/in/kallol-khatua/">
+                      <LinkedInIcon />
+                    </Link>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            
+          </Grid>
+
           <Typography variant="h4">Core team</Typography>
 
           <Grid container spacing={3} justifyContent="center">
@@ -119,7 +161,7 @@ export default function TeamComponent() {
               variant="text"
               size="medium"
               LinkComponent={RouterLink}
-              to="/advertiser/signup"
+              to="/join-as-advertiser"
             >
               Run a Advertising Campaign
             </Button>
@@ -128,7 +170,7 @@ export default function TeamComponent() {
               variant="contained"
               size="medium"
               LinkComponent={RouterLink}
-              to="/publisher/signup"
+              to="/join-as-publisher"
             >
               Earn money from website
             </Button>

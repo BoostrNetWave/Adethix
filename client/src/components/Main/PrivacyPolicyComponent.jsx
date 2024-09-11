@@ -37,6 +37,7 @@ export default function PrivacyPolicyComponent() {
               flexDirection: { xs: "column", md: "row" },
               alignSelf: "center",
               textAlign: "center",
+              mb: 4,
             }}
           >
             Privacy Policy
@@ -60,7 +61,7 @@ export default function PrivacyPolicyComponent() {
             other than this website.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Consent
           </Typography>
           <p>
@@ -68,7 +69,7 @@ export default function PrivacyPolicyComponent() {
             agree to its terms.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Information we collect
           </Typography>
           <p>
@@ -88,7 +89,7 @@ export default function PrivacyPolicyComponent() {
             email address, and telephone number.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             How we use your information
           </Typography>
           <p>
@@ -110,7 +111,7 @@ export default function PrivacyPolicyComponent() {
             <li>Find and prevent fraud</li>
           </ul>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Log Files
           </Typography>
           <p>
@@ -126,7 +127,7 @@ export default function PrivacyPolicyComponent() {
             gathering demographic information.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             CCPA Privacy Policy (Do Not Sell My Personal Information)
           </Typography>
           <p>
@@ -151,7 +152,7 @@ export default function PrivacyPolicyComponent() {
             would like to exercise any of these rights, please contact us.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             GDPR Privacy Policy (Data Protection Rights)
           </Typography>
           <p>
@@ -191,7 +192,7 @@ export default function PrivacyPolicyComponent() {
             would like to exercise any of these rights, please contact us.
           </p>
 
-          <Typography color="text.secondary" variant="h5">
+          <Typography color="text.secondary" variant="h5" sx={{mb:1}}>
             Children&apos;s Information
           </Typography>
           <p>
@@ -223,7 +224,7 @@ export default function PrivacyPolicyComponent() {
               variant="text"
               size="medium"
               LinkComponent={RouterLink}
-              to="/advertiser/signup"
+              to="/join-as-advertiser"
             >
               Run a Advertising Campaign
             </Button>
@@ -232,7 +233,7 @@ export default function PrivacyPolicyComponent() {
               variant="contained"
               size="medium"
               LinkComponent={RouterLink}
-              to="/publisher/signup"
+              to="/join-as-publisher"
             >
               Earn money from website
             </Button>

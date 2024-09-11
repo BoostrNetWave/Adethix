@@ -46,7 +46,7 @@ export default function AdvertiserFAQComponent() {
               mb: 4,
             }}
           >
-            Advertisement FAQ
+            Advertiser FAQ
           </Typography>
           <div>
             <Accordion>
@@ -313,7 +313,7 @@ export default function AdvertiserFAQComponent() {
               <AccordionDetails>
                 <Typography>
                   We thought you&apos;d never ask. Simply fill out our{" "}
-                  <Link to="/advertiser/signup">
+                  <Link to="/join-as-advertiser">
                     advertising information form
                   </Link>
                   . A member of our team will contact you with a detailed
@@ -340,7 +340,7 @@ export default function AdvertiserFAQComponent() {
               variant="text"
               size="medium"
               LinkComponent={RouterLink}
-              to="/advertiser/signup"
+              to="/join-as-advertiser"
             >
               Run a Advertising Campaign
             </Button>

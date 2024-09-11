@@ -10,8 +10,9 @@ import PublisherPolicyPage from "../pages/Publisher/PublisherPolicyPage.jsx";
 import TermsAndCondition from "../pages/Main/TermsAndCondition.jsx";
 import GoogleAdsComparision from "../pages/Main/GoogleAdsComparision.jsx";
 import Pricing from "../pages/Main/Pricing.jsx";
-import PublisherFAQ from "../pages/Main/PublisherFAQ.jsx"
-import AdvertiserFAQ from "../pages/Main/AdvertiserFAQ.jsx"
+import PublisherFAQ from "../pages/Main/PublisherFAQ.jsx";
+import AdvertiserFAQ from "../pages/Main/AdvertiserFAQ.jsx";
+import RevenueCalculator from "../pages/Publisher/RevenueCalculator.jsx";
 
 const MainRoutes = {
   path: "/",
@@ -73,6 +74,10 @@ const MainRoutes = {
     {
       path: "advertisers/faq",
       element: <AdvertiserFAQ />,
+    },
+    {
+      path: "publishers/calculator",
+      element: <RevenueCalculator />,
     },
   ],
 };

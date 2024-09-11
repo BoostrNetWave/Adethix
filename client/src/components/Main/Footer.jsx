@@ -203,6 +203,14 @@ export default function Footer() {
             >
               Publisher FAQ
             </Link>
+            <Link
+              component={RouterLink}
+              color="text.secondary"
+              sx={{ cursor: "pointer" }}
+              to={"/publishers/calculator"}
+            >
+              Revenue Calculator
+            </Link>
           </Box>
           <Box
             sx={{
