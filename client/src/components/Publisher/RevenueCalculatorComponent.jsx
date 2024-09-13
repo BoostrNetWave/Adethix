@@ -85,7 +85,7 @@ export default function RevenueCalculatorComponent() {
             what kind of a monthly payout to expect.
           </p>
 
-          <Box sx={{ display: "flex", gap: 5 }}>
+          <Box sx={{ display: "flex", gap: 5, flexDirection: { xs: 'column', md: 'row' }, }}>
             <Box
               sx={{
                 display: "flex",

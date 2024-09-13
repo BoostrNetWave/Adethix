@@ -199,6 +199,14 @@ export default function Footer() {
               component={RouterLink}
               color="text.secondary"
               sx={{ cursor: "pointer" }}
+              to={"/publishers/guide"}
+            >
+              Publisher Guide
+            </Link>
+            <Link
+              component={RouterLink}
+              color="text.secondary"
+              sx={{ cursor: "pointer" }}
               to={"/publishers/faq"}
             >
               Publisher FAQ
