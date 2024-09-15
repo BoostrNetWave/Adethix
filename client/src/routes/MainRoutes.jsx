@@ -14,6 +14,7 @@ import PublisherFAQ from "../pages/Main/PublisherFAQ.jsx";
 import AdvertiserFAQ from "../pages/Main/AdvertiserFAQ.jsx";
 import RevenueCalculator from "../pages/Publisher/RevenueCalculator.jsx";
 import PublisherGuide from "../pages/Publisher/PublisherGuide.jsx";
+import CampaignCalculator from "../pages/Advertiser/CampaignCalculator.jsx";
 
 const MainRoutes = {
   path: "/",
@@ -83,6 +84,10 @@ const MainRoutes = {
     {
       path: "publishers/guide",
       element: <PublisherGuide />,
+    },
+    {
+      path: "advertisers/calculator",
+      element: <CampaignCalculator />,
     },
   ],
 };

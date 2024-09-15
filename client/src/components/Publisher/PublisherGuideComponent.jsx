@@ -166,7 +166,7 @@ export default function PublisherGuideComponent() {
                     Step #2: Setup
                   </Typography>
                   <Typography variant="body1" color="text.secondary">
-                    Setup the EthicalAds ad client on your site with your custom
+                    Setup the Adethix ad client on your site with your custom
                     ID from our publisher dashboard. Out of the box you'll serve
                     unpaid ads until your site is approved for paid ads.
                   </Typography>

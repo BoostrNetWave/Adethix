@@ -23,7 +23,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {"Copyright © "}
-      <Link component={RouterLink} to={import.meta.env.VITE_HOME_PAGE}>
+      <Link component={RouterLink} to="/">
         Adethix
       </Link>{" "}
       powered by{" "}
@@ -255,6 +255,14 @@ export default function Footer() {
               to={"/advertisers/faq"}
             >
               Advertiser FAQ
+            </Link>
+            <Link
+              component={RouterLink}
+              color="text.secondary"
+              sx={{ cursor: "pointer" }}
+              to={"/advertisers/calculator"}
+            >
+              Campaign Calculator
             </Link>
           </Box>
 
