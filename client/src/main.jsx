@@ -2,6 +2,8 @@
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import App from './App';
+import "react-toastify/dist/ReactToastify.css";
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import { ToastContainer } from "react-toastify";
 
