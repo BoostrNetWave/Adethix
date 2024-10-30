@@ -31,15 +31,15 @@ function AdvertiserReport() {
         setIsLoggedIn(false);
       } else if (response.status === 200) {
         setData(response.data);
-        // console.log(data);
+        // console.log(response.data);
       }
     }
   }, [response]);
   // console.log(data);
-    
+
   return (
     <>
-      <Report data={data}/>
+      <Report data={data} />
     </>
   );
 }
@@ -55,4 +55,4 @@ export async function loader() {
   }
 }
 
-export default AdvertiserReport
+export default AdvertiserReport;

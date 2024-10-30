@@ -33,7 +33,7 @@ function AdminAuthorizeAdvertiser() {
       }
     }
   }, [response]);
-//   console.log(data);
+  // console.log(data);
 
   return (
     <>

@@ -15,6 +15,7 @@ import AdvertiserFAQ from "../pages/Main/AdvertiserFAQ.jsx";
 import RevenueCalculator from "../pages/Publisher/RevenueCalculator.jsx";
 import PublisherGuide from "../pages/Publisher/PublisherGuide.jsx";
 import CampaignCalculator from "../pages/Advertiser/CampaignCalculator.jsx";
+import VerifyEmail from "../pages/Main/VerifyEmail.jsx";
 
 const MainRoutes = {
   path: "/",
@@ -30,6 +31,10 @@ const MainRoutes = {
         {
           path: "login",
           element: <Login />,
+        },
+        {
+          path: "verify-email",
+          element: <VerifyEmail />,
         },
       ],
     },

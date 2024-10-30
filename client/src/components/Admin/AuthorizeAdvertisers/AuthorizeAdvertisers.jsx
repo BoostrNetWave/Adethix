@@ -44,18 +44,18 @@ function AuthorizeAdvertisers({ data }) {
                   // pb={0}
                 >
                   <Typography variant="h6" sx={{ fontSize: "16px", pr: 1 }}>
-                    First Name: <span>{advertiser.user.firstName}</span>
+                    First Name: <span>{advertiser?.user?.firstName}</span>
                   </Typography>
                   <Typography variant="h6" sx={{ fontSize: "16px", pr: 1 }}>
-                    Last Name: <span>{advertiser.user.lastName}</span>
+                    Last Name: <span>{advertiser?.user?.lastName}</span>
                   </Typography>
                   <Typography variant="h6" sx={{ fontSize: "16px", pr: 1 }}>
-                    Email Address: <span>{advertiser.user.email}</span>
+                    Email Address: <span>{advertiser?.user?.email}</span>
                   </Typography>
                 </CardContent>
 
                 <CardActions>
-                  <RouterLink relative="path" to={`${advertiser._id}/review`}>
+                  <RouterLink relative="path" to={`${advertiser?._id}/review`}>
                     <Button
                       variant="outlined"
                       sx={{ textTransform: "none", mr: 2 }}

@@ -386,8 +386,39 @@ module.exports.saveReviewStatus = async (req, res) => {
 
 module.exports.getAllPendingAuthorizationPublisher = async (req, res) => {
     try {
-        let newPublishers = await Publisher.find({ isReviewed: false, isApproved: false, isActive: false }).populate("user");
-        // console.log(newPublishers)
+        let newPublishers = await Publisher.aggregate([
+            {
+                $lookup: {
+                    from: "users",
+                    foreignField: "_id",
+                    localField: "user",
+                    as: "user"
+                }
+            },
+            {
+                $unwind: {
+                    path: "$user"
+                }
+            },
+            {
+                $match: {
+                    $and: [
+                        {
+                            isReviewed: false,
+                        },
+                        {
+                            isActive: false
+                        },
+                        {
+                            isApproved: false,
+                        },
+                        {
+                            "user.is_email_verified": true
+                        }
+                    ]
+                }
+            }
+        ])
 
         // also send need activation publisher
         let approvedPublishers = await Publisher.find({ isReviewed: true, isApproved: true, isActive: false }).populate("user");
@@ -418,59 +449,23 @@ module.exports.getPendingAuthorizationPublisher = async (req, res) => {
 module.exports.savePublisherApprovalStatus = async (req, res) => {
     try {
         const { publisherId } = req.params;
-        const { comments, isApproved, password } = req.body;
+        const { comments, isApproved } = req.body;
         // console.log(req.body);
         let publisher;
 
         if (comments === "") return res.status(400).send({ message: "Please enter a review comment" });
         if (isApproved) {
-            if (password === "") {
-                return res.status(400).send({ message: "Please create a password" });
-            } else {
-                // password validation
-                const complexityOptions = {
-                    min: 8,
-                    max: 20,
-                    lowerCase: 1,
-                    upperCase: 1,
-                    numeric: 1,
-                    symbol: 1,
-                    requirementCount: 4,
-                };
-
-                const passwordSchema = joi.object({
-                    password: passwordComplexity(complexityOptions),
-                });
-
-                const { error } = passwordSchema.validate({ password });
-                // console.log(error);
-                if (error)
-                    return res.status(400).send({ message: error.details[0].message });
-
-                // updating publisher
-                publisher = await Publisher.findOneAndUpdate(
-                    {
-                        _id: publisherId
-                    },
-                    {
-                        isApproved: true,
-                        isReviewed: true,
-                        isActive: true
-                    }
-                ).populate("user")
-
-                // creating tempory password
-                const salt = await bcrypt.genSalt(Number(process.env.SALT));
-                const hashedPassword = await bcrypt.hash(password, salt);
-                await User.findOneAndUpdate(
-                    {
-                        _id: publisher.user._id
-                    },
-                    {
-                        password: hashedPassword
-                    }
-                )
-            }
+            // updating publisher
+            publisher = await Publisher.findOneAndUpdate(
+                {
+                    _id: publisherId
+                },
+                {
+                    isApproved: true,
+                    isReviewed: true,
+                    isActive: true
+                }
+            )
         } else {
             // updating publisher
             publisher = await Publisher.findOneAndUpdate(
@@ -492,9 +487,9 @@ module.exports.savePublisherApprovalStatus = async (req, res) => {
                 reviewFor: "Publisher Approval",
                 publisherId,
                 isApproved,
-                password,
             }
         })
+
         await newAdminPublisherReview.save();
 
         res.status(200).send({ message: "Review Updated" });
@@ -560,8 +555,42 @@ module.exports.savePublisherActivationStatus = async (req, res) => {
 
 module.exports.getAllPendingAuthorizationAdvertiser = async (req, res) => {
     try {
-        let newAdvertisers = await Advertiser.find({ isReviewed: false, isApproved: false, isActive: false }).populate("user");
+        // let newAdvertisers = await Advertiser.find({ isReviewed: false, isApproved: false, isActive: false }).populate("user");
         // console.log(newAdvertisers)
+
+        let newAdvertisers = await Advertiser.aggregate([
+            {
+                $lookup: {
+                    from: "users",
+                    foreignField: "_id",
+                    localField: "user",
+                    as: "user"
+                }
+            },
+            {
+                $unwind: {
+                    path: "$user"
+                }
+            },
+            {
+                $match: {
+                    $and: [
+                        {
+                            isReviewed: false,
+                        },
+                        {
+                            isActive: false
+                        },
+                        {
+                            isApproved: false,
+                        },
+                        {
+                            "user.is_email_verified": true
+                        }
+                    ]
+                }
+            }
+        ])
 
         res.status(200).send({ newAdvertisers });
         // res.status(200).send({message: "Working"});
@@ -587,62 +616,27 @@ module.exports.getAdvertiserDetails = async (req, res) => {
 module.exports.saveAdvertiserReviewStatus = async (req, res) => {
     try {
         const { advertiserId } = req.params;
-        const { comments, isApproved, password } = req.body;
+        const { comments, isApproved } = req.body;
 
         let advertiser;
 
         if (comments === "") return res.status(400).send({ message: "Please enter a review comment" });
+        console.log(isApproved)
         if (isApproved) {
-            if (password === "") {
-                return res.status(400).send({ message: "Please create a password" });
-            } else {
-                // password validation
-                const complexityOptions = {
-                    min: 8,
-                    max: 20,
-                    lowerCase: 1,
-                    upperCase: 1,
-                    numeric: 1,
-                    symbol: 1,
-                    requirementCount: 4,
-                };
-
-                const passwordSchema = joi.object({
-                    password: passwordComplexity(complexityOptions),
-                });
-
-                const { error } = passwordSchema.validate({ password });
-                // console.log(error);
-                if (error)
-                    return res.status(400).send({ message: error.details[0].message });
-
-                // updating advertiser
-                advertiser = await Advertiser.findOneAndUpdate(
-                    {
-                        _id: advertiserId
-                    },
-                    {
-                        isApproved: true,
-                        isReviewed: true,
-                        isActive: true,
-                    }
-                ).populate("user")
-
-                // creating tempory password
-                const salt = await bcrypt.genSalt(Number(process.env.SALT));
-                const hashedPassword = await bcrypt.hash(password, salt);
-                await User.findOneAndUpdate(
-                    {
-                        _id: advertiser.user._id
-                    },
-                    {
-                        password: hashedPassword
-                    }
-                )
-            }
+            // updating advertiser
+            advertiser = await Advertiser.findOneAndUpdate(
+                {
+                    _id: advertiserId
+                },
+                {
+                    isApproved: true,
+                    isReviewed: true,
+                    isActive: true,
+                }
+            )
         } else {
             // updating advertiser
-            advertiser = await Publisher.findOneAndUpdate(
+            advertiser = await Advertiser.findOneAndUpdate(
                 {
                     _id: advertiserId
                 },
@@ -661,7 +655,6 @@ module.exports.saveAdvertiserReviewStatus = async (req, res) => {
                 reviewFor: "Advertiser Approval",
                 advertiserId,
                 isApproved,
-                password,
             }
         })
         await newAdminAdvertiserReview.save();

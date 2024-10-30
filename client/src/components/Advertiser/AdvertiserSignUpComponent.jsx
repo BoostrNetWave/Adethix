@@ -63,7 +63,8 @@ export default function AdvertiserSignUpComponent() {
     monthlyBudget: "",
     note: "",
     acceptTerms: true,
-    referralCode: ''
+    referralCode: "",
+    password: "",
   });
 
   const handleInputChange = (e) => {
@@ -96,7 +97,7 @@ export default function AdvertiserSignUpComponent() {
       try {
         let response = await axios.post(url, formValues);
 
-        if (response?.status === 200) {
+        if (response?.status === 201) {
           // console.log(response.data)
           toast.success(response.data.message);
           navigate("/");
@@ -179,6 +180,21 @@ export default function AdvertiserSignUpComponent() {
               </Grid>
 
               <Grid item xs={12}>
+                <FormLabel component="legend">Create a password</FormLabel>
+                <TextField
+                  required
+                  fullWidth
+                  type="password"
+                  id="password"
+                  label="Password"
+                  name="password"
+                  autoComplete="password"
+                  value={formValues.password}
+                  onChange={handleInputChange}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
                 <FormLabel component="legend">Your company</FormLabel>
                 <TextField
                   required
@@ -219,6 +235,25 @@ export default function AdvertiserSignUpComponent() {
                   >
                     <MenuItem value="" disabled>
                       Audience category
+                    </MenuItem>
+                    <MenuItem value="E-commerce Businesses.">
+                      E-commerce Businesses.
+                    </MenuItem>
+                    <MenuItem value="Local Businesses: (Restaurants, salons, and service providers).">
+                      Local Businesses: (Restaurants, salons, and service
+                      providers).
+                    </MenuItem>
+                    <MenuItem value="Consumer Brands:(fashion, beauty, electronics, and home goods).">
+                      Consumer Brands:(fashion, beauty, electronics, and home
+                      goods).
+                    </MenuItem>
+                    <MenuItem value="SaaS Companies.">SaaS Companies.</MenuItem>
+                    <MenuItem value="Travel and Hospitality: (Airlines, hotels, and travel agencies).">
+                      Travel and Hospitality: (Airlines, hotels, and travel
+                      agencies).
+                    </MenuItem>
+                    <MenuItem value="Financial Services: (Banks and investment firms).">
+                      Financial Services: (Banks and investment firms).
                     </MenuItem>
                     <MenuItem value="Frontend web development">
                       Frontend web development
@@ -333,7 +368,7 @@ export default function AdvertiserSignUpComponent() {
             >
               Join as Advertiser
             </Button>
-            <Grid container justifyContent="flex-end" sx={{mb: 5}}>
+            <Grid container justifyContent="flex-end" sx={{ mb: 5 }}>
               <Grid item>
                 <Link
                   component={RouterLink}

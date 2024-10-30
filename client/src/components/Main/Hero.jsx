@@ -28,8 +28,8 @@ export default function Hero() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
+          pt: { xs: 14, sm: 18 },
+          pb: { xs: 8, sm: 10 },
         }}
       >
         <Stack spacing={4} useFlexGap sx={{ width: { xs: "100%", sm: "70%" } }}>
@@ -40,10 +40,15 @@ export default function Hero() {
               flexDirection: { xs: "column", md: "row" },
               alignSelf: "center",
               textAlign: "center",
-              fontSize: "clamp(3.5rem, 10vw, 4rem)",
+              fontSize: {
+                xs: "2rem",
+                sm: "2.5rem",
+                md: "3rem",
+                lg: "3rem",
+              },
             }}
           >
-            The Premier Ad Platform for Developers
+            The Premier Ad Platform for Business and Startups
             {/* The Premier&nbsp; */}
             <Typography
               component="span"
@@ -63,8 +68,9 @@ export default function Hero() {
             sx={{ alignSelf: "center", width: { sm: "100%", md: "80%" } }}
             variant="h6"
           >
-            Leverage our network to reach the most engaged and influential
-            developers.
+            Our advanced advertising tools make it easy for your business to
+            scale, connect with your audience, and achieve meaningful
+            engagement.
           </Typography>
 
           <Box

@@ -64,6 +64,7 @@ export default function PublisherSignUpComponent() {
     note: "",
     referralCode: "",
     acceptTerms: true,
+    password: "",
   });
 
   const handleInputChange = (e) => {
@@ -96,7 +97,7 @@ export default function PublisherSignUpComponent() {
       try {
         let response = await axios.post(url, formValues);
 
-        if (response?.status === 200) {
+        if (response?.status === 201) {
           // console.log(response.data)
           toast.success(response.data.message);
           navigate("/");
@@ -117,7 +118,7 @@ export default function PublisherSignUpComponent() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            mt: 10
+            mt: 10,
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
@@ -179,6 +180,21 @@ export default function PublisherSignUpComponent() {
               </Grid>
 
               <Grid item xs={12}>
+                <FormLabel component="legend">Create a password</FormLabel>
+                <TextField
+                  required
+                  fullWidth
+                  type="password"
+                  id="password"
+                  label="Password"
+                  name="password"
+                  autoComplete="password"
+                  value={formValues.password}
+                  onChange={handleInputChange}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
                 <FormLabel component="legend">Your website URL</FormLabel>
                 <TextField
                   required
@@ -219,6 +235,18 @@ export default function PublisherSignUpComponent() {
                   >
                     <MenuItem value="" disabled>
                       Audience category
+                    </MenuItem>
+                    <MenuItem value="Bloggers: (e.g., food, travel, technology)">
+                      Bloggers: (e.g., food, travel, technology)
+                    </MenuItem>
+                    <MenuItem value="News Website">News Website</MenuItem>
+                    <MenuItem value="Niche Content Sites">
+                      Niche Content Sites
+                    </MenuItem>
+                    <MenuItem value="Gaming Websites">Gaming Websites</MenuItem>
+                    <MenuItem value="Influencers">Influencers</MenuItem>
+                    <MenuItem value="Educational Platforms">
+                      Educational Platforms
                     </MenuItem>
                     <MenuItem value="Frontend web development">
                       Frontend web development
@@ -339,7 +367,7 @@ export default function PublisherSignUpComponent() {
             >
               Join as Publisher
             </Button>
-            <Grid container justifyContent="flex-end" sx={{mb: 5}}>
+            <Grid container justifyContent="flex-end" sx={{ mb: 5 }}>
               <Grid item>
                 <Link
                   component={RouterLink}

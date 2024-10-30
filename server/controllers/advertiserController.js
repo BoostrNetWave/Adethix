@@ -17,6 +17,7 @@ const Razorpay = require('razorpay');
 const crypto = require('crypto');
 
 const ShortUniqueId = require('short-unique-id');
+const sendVerifyEmail = require('../emails/verificationEmail.js');
 
 module.exports.getDashboard = async (req, res) => {
     try {
@@ -34,7 +35,7 @@ module.exports.getDashboard = async (req, res) => {
             }
         ])
         // console.log(createdAds)
-        let ads = createdAds[0].ads;
+        let ads = createdAds[0]?.ads || [];
         // console.log(ads);
 
         // Get the current date and time
@@ -177,7 +178,7 @@ module.exports.getReport = async (req, res) => {
                 }
             }
         ])
-        let ads = createdAds[0].ads;
+        let ads = createdAds[0]?.ads || [];
 
 
         const now = new Date();
@@ -318,6 +319,7 @@ module.exports.getReport = async (req, res) => {
 
         res.status(200).send({ data: combinedArray });
     } catch (err) {
+        console.log(err)
         res.status(500).send({ message: "Internal server error" });
     }
 }
@@ -1243,17 +1245,25 @@ module.exports.signin = async (req, res) => {
 
         if (!user) return res.status(400).send({ message: 'Invalid email or password.' });
 
+        let advertiser = await Advertiser.findOne({ user: user._id });
+        if (!advertiser) {
+            return res.status(403).send({ message: "You are not a registered advertiser.", error: "Forbidden" });
+        }
+
+        if (!user.is_email_verified) {
+            return res.status(400).send({ message: 'Please verify your email' });
+        }
+
+        if (!advertiser.isActive || !advertiser.isApproved) {
+            return res.status(400).send({ message: 'Your account is not activated' });
+        }
+
         // // ----------- checking password match or not ----------- 
         const validPassword = await bcrypt.compare(
             req.body.password, user.password
         )
         // console.log(validPassword);
         if (!validPassword) return res.status(400).send({ message: 'Invalid email or password.' });
-
-        let advertiser = await Advertiser.findOne({ user: user._id });
-        if (!advertiser) {
-            return res.status(403).send({ message: "You are not a registered advertiser.", error: "Forbidden" });
-        }
 
         // after successfull login creating jwt token
         const token = user.generateAuthToken();
@@ -1703,6 +1713,28 @@ module.exports.signup = async (req, res) => {
             return res.status(409).send({ message: "User with given email address already exist" });
         }
 
+        // password validation
+        const complexityOptions = {
+            min: 8,
+            max: 20,
+            lowerCase: 1,
+            upperCase: 1,
+            numeric: 1,
+            symbol: 1,
+            requirementCount: 4,
+        };
+
+        const passwordSchema = joi.object({
+            password: passwordComplexity(complexityOptions),
+        });
+
+        const { passwordValidationError } = passwordSchema.validate({ password: req.body.password });
+        if (passwordValidationError)
+            return res.status(400).send({ message: error.details[0].message });
+
+        const salt = await bcrypt.genSalt(Number(process.env.SALT));
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
         // TODO: Check for valid referral code 
 
         let newUser = new User({
@@ -1712,6 +1744,7 @@ module.exports.signup = async (req, res) => {
             referralCode: req.body.referralCode,
             acceptTerms: req.body.acceptTerms,
             role: "advertiser",
+            password: hashedPassword,
         })
         let createdUser = await newUser.save();
 
@@ -1726,7 +1759,11 @@ module.exports.signup = async (req, res) => {
         await newAdvertiser.save();
         // console.log(newUser, newAdvertiser)
 
-        return res.status(200).send({ message: "Our team will contact you soon." });
+        // Send verification email
+        const token = createdUser.generateAuthToken();
+        await sendVerifyEmail(req.body.email, token);
+
+        return res.status(201).send({ message: "Please check your email and verify." });
     } catch (error) {
         console.log(error);
         return res.status(500).send({ message: "Internal server error" });
@@ -1754,6 +1791,12 @@ const validateSignupData = (data) => {
             .messages({
                 'string.email': 'Enter a valid email address',
                 'any.required': 'Email is required'
+            }),
+        password: joi.string()
+            .required()
+            .label('password')
+            .messages({
+                'any.required': 'Create a password'
             }),
         company: joi.string()
             .required()

@@ -51,8 +51,8 @@ function AuthorizePublisherReview({ data }) {
     const data = {
       comments,
       isApproved,
-      password,
     };
+
     // console.log(data);
 
     try {
@@ -174,22 +174,6 @@ function AuthorizePublisherReview({ data }) {
                 label="Reject"
               />
             </RadioGroup>
-
-            {isApproved && (
-              <>
-                <FormLabel component="legend" sx={{ mb: -0.5, mt: 1 }}>
-                  Create a temporary password - At least 8 characters long, with lowercase letter, uppercase letter, number and symbol
-                </FormLabel>
-                <TextField
-                  label="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  fullWidth
-                  margin="normal"
-                />
-              </>
-            )}
 
             <FormLabel component="legend" sx={{ mb: -0.5, mt: 1 }}>
               Add a comment

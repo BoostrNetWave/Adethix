@@ -17,7 +17,7 @@ const items = [
     // icon: <ViewQuiltRoundedIcon />,
     title: "Publishers",
     description:
-      "Join our network of premium websites and maximize your revenue by delivering high-quality, targeted ads that drive engagement and connect with the developer community.",
+      "Join our network of premium websites and maximise your revenue by delivering high-quality, targeted ads that drive engagement and connect with the developer community.",
     features: [
       {
         icon: <RiCrosshair2Fill />,
@@ -37,7 +37,7 @@ const items = [
     // icon: <EdgesensorHighRoundedIcon />,
     title: "Advertisers",
     description:
-      "Reach your target audience with precision by placing your ads on top-tier developer-focused websites, driving engagement and achieving impactful results for your brand.",
+      "Reach your target audience with precision by placing your ads on top-tier publisher websites, driving engagement, and achieving impactful results for your brand.",
     features: [
       {
         icon: <SiGoogleauthenticator />,
@@ -79,10 +79,13 @@ export default function Features() {
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              Explore cutting-edge features tailored for developer engagement,
-              offering precise targeting, insightful analytics, and effortless
-              integration to ensure your ads resonate with the tech community
-              and drive meaningful results.
+              Explore smart features designed for businesses and startups to
+              connect with their audience. Our platform offers accurate
+              targeting to help you reach the right people, easy-to-understand
+              analytics for tracking your ad performance, and smooth integration
+              to make setting up ads simple. With Adethix, your ads will
+              effectively reach the right community and deliver great results
+              for your business.
             </Typography>
           </div>
           <Grid

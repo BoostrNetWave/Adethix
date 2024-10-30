@@ -13,8 +13,10 @@ const verifyToken = async (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWTPRIVATEKEY); // Verify the token
+        
         let publisher = await Publisher.findOne({ user: decoded._id }).populate("user");
         if (!publisher) return res.status(403).send({ message: "You are not a registered publisher", error: "Forbidden" });
+
         req.user = publisher; // Add decoded user to request
         req.publisher = publisher;
         // console.log(decoded, publisher);

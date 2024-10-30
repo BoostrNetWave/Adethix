@@ -50,11 +50,10 @@ export default function AboutUsComponent() {
             Our Mission
           </Typography>
           <p>
-            At Adethix, we are dedicated to bridging the gap between innovative
-            developers and the tools, platforms, and services they need to
-            succeed. Our mission is to provide a highly targeted advertising
-            platform that connects developers with resources that enhance their
-            productivity and creativity.
+            At Adethix, our mission is to help businesses and startups succeed
+            by providing an easy-to-use advertising platform. We focus on
+            delivering effective and honest advertising solutions that truly
+            connect brands with their audience.
           </p>
 
           <Typography
@@ -66,11 +65,17 @@ export default function AboutUsComponent() {
             What We Do
           </Typography>
           <p>
-            Our platform is designed specifically for developers, ensuring that
-            the advertisements you see are pertinent to your professional growth
-            and project needs. From coding tools and software libraries to cloud
-            services and educational resources, our ads are curated to help you
-            stay ahead in the ever-evolving tech landscape.
+            We bring together advertisers and publishers on our platform, making
+            it simple for businesses to reach the right people. Our tools allow
+            advertisers to place ads where they’ll be most effective, while
+            publishers can easily earn money by displaying ads that fit their
+            content.
+          </p>
+          <p>
+            We’re committed to making advertising better for everyone involved.
+            By continuously improving our services, we aim to support both
+            advertisers and publishers in growing their businesses and achieving
+            their goals together.
           </p>
 
           <Box

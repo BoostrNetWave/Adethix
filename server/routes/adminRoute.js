@@ -44,8 +44,10 @@ router.get("/applying-reviews/:reviewId", verifyToken, adminController.getApplyi
 router.post("/applying-reviews/:reviewId", verifyToken, adminController.saveReviewStatus);
 
 router.get("/authorize-publishers", verifyToken, adminController.getAllPendingAuthorizationPublisher);
+
 router.get("/authorize-publishers/:publisherId", verifyToken, adminController.getPendingAuthorizationPublisher);
 router.post("/authorize-publishers/:publisherId", verifyToken, adminController.savePublisherApprovalStatus);
+
 router.get("/authorize-publishers/:publisherId/activate", verifyToken, adminController.getActivationPublisher);
 router.post("/authorize-publishers/:publisherId/activate", verifyToken, adminController.savePublisherActivationStatus);
 

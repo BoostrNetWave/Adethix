@@ -10,6 +10,7 @@ const joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
 
 const ShortUniqueId = require('short-unique-id');
+const sendVerifyEmail = require("../emails/verificationEmail");
 
 // basic report overview
 module.exports.getDashboard = async (req, res) => {
@@ -443,15 +444,23 @@ module.exports.signin = async (req, res) => {
 
         if (!user) return res.status(400).send({ message: 'Invalid email or password.' });
 
+        let publisher = await Publisher.findOne({ user: user._id });
+        if (!publisher) return res.status(403).send({ message: "You are not a registered publisher", error: "Forbidden" });
+
+        if (!user.is_email_verified) {
+            return res.status(400).send({ message: 'Please verify your email' });
+        }
+
+        if (!publisher.isActive || !publisher.isApproved) {
+            return res.status(400).send({ message: 'Your account is not activated' });
+        }
+
         // // ----------- checking password match or not ----------- 
         const validPassword = await bcrypt.compare(
             req.body.password, user.password
         )
         // console.log(validPassword);
         if (!validPassword) return res.status(400).send({ message: 'Invalid email or password.' });
-
-        let publisher = await Publisher.findOne({ user: user._id });
-        if (!publisher) return res.status(403).send({ message: "You are not a registered publisher", error: "Forbidden" });
 
         // after successfull login creating jwt token
         const token = user.generateAuthToken();
@@ -489,6 +498,28 @@ module.exports.signup = async (req, res) => {
             return res.status(409).send({ message: "User with given email address already exist" });
         }
 
+        // password validation
+        const complexityOptions = {
+            min: 8,
+            max: 20,
+            lowerCase: 1,
+            upperCase: 1,
+            numeric: 1,
+            symbol: 1,
+            requirementCount: 4,
+        };
+
+        const passwordSchema = joi.object({
+            password: passwordComplexity(complexityOptions),
+        });
+
+        const { passwordValidationError } = passwordSchema.validate({ password: req.body.password });
+        if (passwordValidationError)
+            return res.status(400).send({ message: error.details[0].message });
+
+        const salt = await bcrypt.genSalt(Number(process.env.SALT));
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
         // TODO: Check for valid referral code 
 
         let newUser = new User({
@@ -498,6 +529,7 @@ module.exports.signup = async (req, res) => {
             referralCode: req.body.referralCode,
             acceptTerms: req.body.acceptTerms,
             role: "publisher",
+            password: hashedPassword,
         })
         let createdUser = await newUser.save();
 
@@ -512,7 +544,11 @@ module.exports.signup = async (req, res) => {
         await newPublisher.save();
         // console.log(newUser, newPublisher)
 
-        return res.status(200).send({ message: "Our team will contact you soon." });
+        // Send verification email
+        const token = createdUser.generateAuthToken();
+        await sendVerifyEmail(req.body.email, token);
+
+        return res.status(201).send({ message: "Please check your email and verify." });
     } catch (error) {
         console.log(error);
         return res.status(500).send({ message: "Internal server error" });
@@ -540,6 +576,12 @@ const validateSignupData = (data) => {
             .messages({
                 'string.email': 'Enter a valid email address',
                 'any.required': 'Email is required'
+            }),
+        password: joi.string()
+            .required()
+            .label('password')
+            .messages({
+                'any.required': 'Create a password'
             }),
         website: joi.string()
             .required()

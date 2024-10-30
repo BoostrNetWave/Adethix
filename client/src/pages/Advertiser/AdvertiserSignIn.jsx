@@ -25,7 +25,9 @@ export default function AdvertiserSignIn() {
     <ThemeProvider theme={LPtheme}>
       <CssBaseline />
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
+
       <AdvertiserSignInComponent />
+
       <Box sx={{ bgcolor: "background.default" }}>
         <Footer />
       </Box>
