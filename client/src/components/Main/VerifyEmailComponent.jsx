@@ -61,7 +61,7 @@ function VerifyEmailComponent() {
 
       if (response?.status === 200) {
         // console.log(response.data);
-        toast.success("Email verified! Your team will contact you soon.");
+        toast.success("Email verified! Our team will contact you soon.");
         navigate("/");
       }
     } catch (err) {
