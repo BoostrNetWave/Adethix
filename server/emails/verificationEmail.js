@@ -1,17 +1,18 @@
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: "live.smtp.mailtrap.io",
+    port: 2525,
     auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: `${process.env.MAILTRAP_USER}`,
+        pass: `${process.env.MAILTRAP_PASS}`
     }
 });
 
 async function sendVerifyEmail(email, token) {
     try {
         const info = await transporter.sendMail({
-            from: `"Adethix" <${process.env.EMAIL_USER}>`,
+            from: `"Adethix" <${process.env.MAILTRAP_EMAIL}>`,
             to: email,
             subject: "Please verify your email address",
             html: `<p><a href='${process.env.FRONTEND_BASE_URL}/auth/verify-email?token=${token}'>Click here</a> to verify your email<p/>
