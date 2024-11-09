@@ -546,7 +546,10 @@ module.exports.signup = async (req, res) => {
 
         // Send verification email
         const token = createdUser.generateAuthToken();
-        await sendVerifyEmail(req.body.email, token);
+        const userName = req.body.firstName;
+        const email = req.body.email;
+        const verificationLink = `${process.env.FRONTEND_BASE_URL}/auth/verify-email?token=${token}`
+        await sendVerifyEmail(userName, email, verificationLink);
 
         return res.status(201).send({ message: "Please check your email and verify." });
     } catch (error) {

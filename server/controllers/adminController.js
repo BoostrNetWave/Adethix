@@ -12,6 +12,10 @@ const AdminAdvertiserReview = require("../models/adminAdvertiserReview")
 const bcrypt = require("bcrypt");
 const joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
+const publisherAccountReject = require("../emails/publisherAccountReject");
+const publisherAccountApprove = require("../emails/publisherAccountApprove");
+const advertiserAccountApprove = require("../emails/advertiserAccountApprove");
+const advertiserAccountReject = require("../emails/advertiserAccountReject");
 
 module.exports.dashboard = async (req, res) => {
     try {
@@ -489,8 +493,17 @@ module.exports.savePublisherApprovalStatus = async (req, res) => {
                 isApproved,
             }
         })
-
         await newAdminPublisherReview.save();
+
+        const user = await User.findOne({
+            _id: publisher.user
+        })
+        // Send email
+        if (isApproved) {
+            publisherAccountApprove(user.email, user.firstName).catch(err => console.log("Error while sending publisher account approval email", err))
+        } else {
+            publisherAccountReject(user.email, user.firstName).catch(err => console.log("Error while sending publisher account rejected email", err))
+        }
 
         res.status(200).send({ message: "Review Updated" });
     } catch (err) {
@@ -543,6 +556,8 @@ module.exports.savePublisherActivationStatus = async (req, res) => {
             }
         })
         await newAdminPublisherReview.save();
+
+        // Send email
 
         res.status(200).send({ message: "Activation Status Updated" });
         // res.status(200).send({ message: "Working" });
@@ -621,7 +636,7 @@ module.exports.saveAdvertiserReviewStatus = async (req, res) => {
         let advertiser;
 
         if (comments === "") return res.status(400).send({ message: "Please enter a review comment" });
-        console.log(isApproved)
+        // console.log(isApproved)
         if (isApproved) {
             // updating advertiser
             advertiser = await Advertiser.findOneAndUpdate(
@@ -658,6 +673,16 @@ module.exports.saveAdvertiserReviewStatus = async (req, res) => {
             }
         })
         await newAdminAdvertiserReview.save();
+
+        const user = await User.findOne({
+            _id: advertiser.user
+        })
+        // Send email
+        if (isApproved) {
+            advertiserAccountApprove(user.email, user.firstName).catch(err => console.log("Error while sending advertiser account approval email", err))
+        } else {
+            advertiserAccountReject(user.email, user.firstName).catch(err => console.log("Error while sending advertiser account rejected email", err))
+        }
 
         res.status(200).send({ message: "Review Updated" });
     } catch (err) {
