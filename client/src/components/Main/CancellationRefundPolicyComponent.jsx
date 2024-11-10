@@ -40,7 +40,7 @@ function CancellationRefundPolicyComponent() {
               mb: 4,
             }}
           >
-            Cancellation/Refund Policy
+            Cancellation / Refund Policy
           </Typography>
 
           <Typography color="text.secondary" variant="h5" sx={{ mb: 1 }}>
