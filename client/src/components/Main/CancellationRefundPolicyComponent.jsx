@@ -6,10 +6,10 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { Link as RouterLink } from "react-router-dom";
 
-export default function PrivacyPolicyComponent() {
+function CancellationRefundPolicyComponent() {
   return (
     <Box
-      id="privacy-policy"
+      id="cancellation-refund-policy"
       sx={(theme) => ({
         width: "100%",
         backgroundImage:
@@ -40,73 +40,39 @@ export default function PrivacyPolicyComponent() {
               mb: 4,
             }}
           >
-            Privacy Policy
+            Cancellation/Refund Policy
           </Typography>
 
           <Typography color="text.secondary" variant="h5" sx={{ mb: 1 }}>
-            1. Introduction
-          </Typography>
-          <p>
-            Adethix is committed to protecting your privacy. This policy
-            outlines how we collect, use, and safeguard your information.
-          </p>
-
-          <Typography color="text.secondary" variant="h5" sx={{ mb: 1 }}>
-            2. Data We Collect
+            1. Subscription and Payment Terms
           </Typography>
           <ul>
             <li>
-              Personal Information: Name, email address, payment details, etc.
+              Subscriptions are billed on a recurring basis as per the selected
+              pricing model.
+            </li>
+            <li>Once you pay fees are nonrefundable.</li>
+          </ul>
+
+          <Typography color="text.secondary" variant="h5" sx={{ mb: 1 }}>
+            2. Refund Policy
+          </Typography>
+          <ul>
+            <li>
+              Refunds are not available once a payment has been processed.
             </li>
             <li>
-              Usage Data: IP address, browser type, pages visited, etc., to
-              improve our services.
+              If you experience issues, please contact support to discuss a
+              resolution. Refund requests are reviewed on a case-by-case basis.
             </li>
           </ul>
 
           <Typography color="text.secondary" variant="h5" sx={{ mb: 1 }}>
-            3. How We Use Your Data
-          </Typography>
-          <ul>
-            <li>To personalize your experience and improve our platform.</li>
-            <li>To process transactions and send relevant information.</li>
-            <li>
-              To communicate with you about updates, new features, and
-              marketing.
-            </li>
-          </ul>
-
-          <Typography color="text.secondary" variant="h5" sx={{ mb: 1 }}>
-            4. Sharing Your Information
+            3. Contact Information
           </Typography>
           <p>
-            We do not sell or share your personal data with third parties
-            without your consent, except to comply with legal obligations or
-            protect our rights.
-          </p>
-
-          <Typography color="text.secondary" variant="h5" sx={{ mb: 1 }}>
-            5. Data Security
-          </Typography>
-          <p>
-            We implement security measures to protect your data. However, no
-            method of transmission over the internet is 100% secure.
-          </p>
-
-          <Typography color="text.secondary" variant="h5" sx={{ mb: 1 }}>
-            6. Your Rights
-          </Typography>
-          <p>
-            You can request access, correction, or deletion of your personal
-            data by contacting us.
-          </p>
-
-          <Typography color="text.secondary" variant="h5" sx={{ mb: 1 }}>
-            7. Changes to This Policy
-          </Typography>
-          <p>
-            We may update this policy from time to time. Check this page for
-            updates.
+            If you have questions about our cancellation or refund policy,
+            please reach out to our support team.
           </p>
 
           <Box
@@ -144,3 +110,5 @@ export default function PrivacyPolicyComponent() {
     </Box>
   );
 }
+
+export default CancellationRefundPolicyComponent;

@@ -16,6 +16,7 @@ import RevenueCalculator from "../pages/Publisher/RevenueCalculator.jsx";
 import PublisherGuide from "../pages/Publisher/PublisherGuide.jsx";
 import CampaignCalculator from "../pages/Advertiser/CampaignCalculator.jsx";
 import VerifyEmail from "../pages/Main/VerifyEmail.jsx";
+import CalcellationRefundPolicy from "../pages/Main/CalcellationRefundPolicy.jsx";
 
 const MainRoutes = {
   path: "/",
@@ -65,6 +66,10 @@ const MainRoutes = {
     {
       path: "publisher-policy",
       element: <PublisherPolicyPage />,
+    },
+    {
+      path: "cancellation-refund-policy",
+      element: <CalcellationRefundPolicy />,
     },
     {
       path: "terms-and-conditions",

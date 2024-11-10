@@ -93,35 +93,6 @@ export default function Footer() {
                 // borderColor: "divider",
               }}
             >
-              <Box>
-                <Link
-                  component={RouterLink}
-                  color="text.secondary"
-                  to="/privacy-policy"
-                >
-                  Privacy Policy
-                </Link>
-                <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
-                  &nbsp;•&nbsp;
-                </Typography>
-                <Link
-                  component={RouterLink}
-                  color="text.secondary"
-                  to="/terms-of-use"
-                >
-                  Terms of Use
-                </Link>
-              </Box>
-              <Box>
-                <Link
-                  component={RouterLink}
-                  color="text.secondary"
-                  to="/terms-and-conditions"
-                >
-                  Terms and Conditions
-                </Link>
-              </Box>
-
               <Copyright />
               <Stack
                 direction="row"
@@ -301,6 +272,27 @@ export default function Footer() {
               to="/team"
             >
               Our Team
+            </Link>
+            <Link
+              component={RouterLink}
+              color="text.secondary"
+              to="/privacy-policy"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              component={RouterLink}
+              color="text.secondary"
+              to="/terms-and-conditions"
+            >
+              Terms and Conditions
+            </Link>
+            <Link
+              component={RouterLink}
+              color="text.secondary"
+              to="/cancellation-refund-policy"
+            >
+              Cancellation/Refund Policy
             </Link>
             <Link
               component={RouterLink}
